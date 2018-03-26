@@ -1,13 +1,10 @@
 <template>
-
+  <section id="staff">
+  </section>
 </template>
 
 <script>
-    export default {
-        name: "staff"
-    }
+export default {
+  name: 'staff'
+}
 </script>
-
-<style scoped>
-
-</style>

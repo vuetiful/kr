@@ -1,11 +1,16 @@
 <template>
   <div id="app">
-    <router-view/>
+    <staff-component></staff-component>
   </div>
 </template>
 
 <script>
+import StaffComponent from './components/Staff.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    'staff-component': StaffComponent
+  }
 }
 </script>
