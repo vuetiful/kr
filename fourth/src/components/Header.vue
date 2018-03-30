@@ -1,17 +1,19 @@
 <template lang="html">
-  <el-header>
-    <el-col :span="12">
-      <h1 class="header-logo"><img src="http://placehold.it/80x60" alt="메인으로 이동"></h1>
-    </el-col>
-    <el-col :span="12">
-      <el-menu :default-active="activeIndex" mode="horizontal" @select="handleSelect">
-        <el-menu-item index="1"><a href="#gotcha">메인</a></el-menu-item>
-        <el-menu-item index="2"><a href="#presenters">발표자</a></el-menu-item>
-        <el-menu-item index="3"><a href="#program">프로그램</a></el-menu-item>
-        <el-menu-item index="4"><a href="#contributors">도움의 손길</a></el-menu-item>
-        <el-menu-item index="5"><a href="#directions">찾아오는 길</a></el-menu-item>
-      </el-menu>
-    </el-col>
+  <el-header class="header">
+    <el-container>
+      <el-container>
+        <h1 class="header-logo"><img src="../assets/logo.png" alt="메인으로 이동" height="50" width="50"></h1>
+      </el-container>
+      <el-container class="header-menu">
+        <el-menu :default-active="activeIndex" mode="horizontal" @select="handleSelect">
+          <el-menu-item index="1"><a href="#gotcha">메인</a></el-menu-item>
+          <el-menu-item index="2"><a href="#presenters">발표자</a></el-menu-item>
+          <el-menu-item index="3"><a href="#program">프로그램</a></el-menu-item>
+          <el-menu-item index="4"><a href="#contributors">도움의 손길</a></el-menu-item>
+          <el-menu-item index="5"><a href="#directions">찾아오는 길</a></el-menu-item>
+        </el-menu>
+      </el-container>
+    </el-container>
   </el-header>
 </template>
 
@@ -30,5 +32,42 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
+.header {
+  height: 60px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  padding: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.header .header-logo {
+  position: absolute;
+  top: 6px;
+  left: 26px;
+}
+
+.header .header-menu {
+  position: absolute;
+  right: 0;
+  color: white;
+}
+
+.header .header-menu a {
+  text-decoration: none;
+  font-weight: bold;
+}
+</style>
+
+<style>
+  .header .header-menu .el-menu {
+    background-color: inherit;
+    border-bottom: none;
+  }
+
+  .header .header-menu .el-menu-item {
+    color: white;
+  }
 </style>

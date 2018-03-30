@@ -10,7 +10,7 @@
       <p class="date">2018. 04 .17 (화)</p>
       <p class="time">19:30 ~ 21:00</p>
       <p class="location">구글 캠퍼스 코리아 메인 이벤트 홀</p>
-      <a class="register">참여 신청</a>
+      <a v-on:click="register" target="_blank" class="register-btn">참가 신청</a>
     </div>
 
     <p class="intro">뷰티풀 코리아는...</p>
@@ -22,6 +22,15 @@ export default {
   computed: {
     innerHeight () {
       return window.innerHeight
+    }
+  },
+  methods: {
+    register () {
+      this.$message({
+        showClose: true,
+        message: '아직 참가 신청 전 입니다.',
+        type: 'warning'
+      })
     }
   }
 }
@@ -76,7 +85,7 @@ export default {
 .text-box .location {
   line-height: 70px;
 }
-.register {
+.register-btn {
   border: 1px solid #fff;
   color: #fff;
   margin-left: auto;
@@ -89,9 +98,10 @@ export default {
   margin-top: 50px;
 
   cursor: pointer;
+  text-decoration: none;
 }
 
-.register:hover {
+.register-btn:hover {
   background-color: white;
   color: black;
 }
