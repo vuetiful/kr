@@ -75,17 +75,18 @@ export default {
   pointer-events: none;
 }
 .text-box {
-  padding: 200px 200px;
+  padding: 5vw 12vw;
   margin: auto;
   font-size: 1.7vw;
   color: #35495e;
   line-height: 30px;
   background: url("~@/assets/img/text_bg.png") no-repeat center center;
+  background-size: contain;
   background-blend-mode: overlay;
   z-index: 10;
 }
 .logo {
-  width: 300px;
+  width: 20vw;
   margin-bottom: 20px;
 }
 
