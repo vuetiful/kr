@@ -1,9 +1,13 @@
 <template lang="html">
   <el-container id="presenters" class="container" direction="vertical">
-    <h2 class="heading">발표자</h2>
-    <el-row :gutter="20">
-      <el-col :span="8" v-for="presentation in presentations" :key="presentation.title">
-        <presenter :presenter="presentation.presenter"></presenter>
+    <h2 class="heading">Speakers</h2>
+    <el-row :gutter="10">
+      <el-col :span="16" :offset="4">
+        <el-row>
+          <el-col :span="7" :offset="1" v-for="presentation in presentations" :key="presentation.title">
+            <presenter :presenter="presentation.presenter"></presenter>
+          </el-col>
+        </el-row>
       </el-col>
     </el-row>
   </el-container>
@@ -29,5 +33,7 @@ export default {
 <style lang="css" scoped>
 .heading {
   display: block;
+  font-size: 4vh;
+  margin: 50px 0;
 }
 </style>

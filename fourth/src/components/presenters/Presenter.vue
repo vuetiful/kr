@@ -1,13 +1,15 @@
 <template lang="html">
-  <el-container class="presenter" direction="vertical">
-    <img :src="presenter.imgUrl" alt="프로필 사진" class="image">
-    <div class="text">
-      <h3 class="name">{{ presenter.name }}</h3>
-      <span class="affiliation">{{ presenter.affiliation }}</span>
-      <span class="description">{{ presenter.description }}</span>
-    </div>
-    <i class="el-icon-message"></i>
-  </el-container>
+
+  <el-card :body-style="{ padding: '0px' }">
+      <img src="http://element.eleme.io/static/hamburger.50e4091.png" class="image">
+      <div class="card">
+        <span>{{ presenter.name }}</span>
+        <div class="bottom clearfix">
+          <time class="time">{{ presenter.affiliation }}</time>
+          <el-button type="text" class="button">test</el-button>
+        </div>
+      </div>
+    </el-card>
 </template>
 
 <script>
@@ -20,5 +22,39 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
+  .card {
+    padding: 14px;
+    text-align: left;
+  }
+
+  .time {
+    font-size: 13px;
+    color: #999;
+  }
+
+  .bottom {
+    margin-top: 13px;
+    line-height: 12px;
+  }
+
+  .button {
+    padding: 0;
+    float: right;
+  }
+
+  .image {
+    width: 100%;
+    display: block;
+  }
+
+  .clearfix:before,
+  .clearfix:after {
+    display: table;
+    content: "";
+  }
+
+  .clearfix:after {
+    clear: both
+  }
 </style>
