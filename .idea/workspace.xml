@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/fourth/src/components/contributors/Contributors.vue" afterPath="$PROJECT_DIR$/fourth/src/components/contributors/Contributors.vue" />
       <change beforePath="$PROJECT_DIR$/fourth/src/components/contributors/Volunteer.vue" afterPath="$PROJECT_DIR$/fourth/src/components/contributors/Volunteer.vue" />
+      <change beforePath="$PROJECT_DIR$/fourth/src/store/store.js" afterPath="$PROJECT_DIR$/fourth/src/store/store.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -41,8 +42,8 @@
       <file leaf-file-name="Contributors.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fourth/src/components/contributors/Contributors.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="87" column="20" lean-forward="false" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
+            <state relative-caret-position="233">
+              <caret line="172" column="0" lean-forward="true" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
               <folding>
                 <element signature="e#1102#1196#0" expanded="true" />
               </folding>
@@ -53,8 +54,8 @@
       <file leaf-file-name="Volunteer.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fourth/src/components/contributors/Volunteer.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="75" lean-forward="false" selection-start-line="2" selection-start-column="66" selection-end-line="2" selection-end-column="75" />
+            <state relative-caret-position="-7">
+              <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -63,8 +64,8 @@
       <file leaf-file-name="store.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fourth/src/store/store.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1620">
-              <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+            <state relative-caret-position="1032">
+              <caret line="113" column="16" lean-forward="true" selection-start-line="113" selection-start-column="16" selection-end-line="113" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -78,11 +79,18 @@
       <find>backgroundColor</find>
       <find>focusOnVolunteer</find>
       <find>unFocusOnVolunteer</find>
-      <find>container-volunteers</find>
       <find>participants</find>
+      <find>container-volunteers</find>
+      <find>focusColor</find>
+      <find>backgroundImageUrl: 'http://placehold.it/100x100'</find>
+      <find>el-container</find>
+      <find>tooltip</find>
+      <find>painting</find>
     </findStrings>
     <replaceStrings>
       <replace>focusColor</replace>
+      <replace>backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633'</replace>
+      <replace>focus-color</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -92,8 +100,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/fourth/src/components/contributors/Sponsor.vue" />
-        <option value="$PROJECT_DIR$/fourth/src/store/store.js" />
         <option value="$PROJECT_DIR$/fourth/src/components/contributors/Volunteer.vue" />
+        <option value="$PROJECT_DIR$/fourth/src/store/store.js" />
         <option value="$PROJECT_DIR$/fourth/src/components/contributors/Contributors.vue" />
       </list>
     </option>
@@ -225,7 +233,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13134000" />
+    <option name="totallyTimeSpent" value="14103000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -356,14 +364,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fourth/src/store/store.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1620">
-          <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fourth/src/components/contributors/Sponsor.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -372,10 +372,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/fourth/src/store/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1032">
+          <caret line="113" column="16" lean-forward="true" selection-start-line="113" selection-start-column="16" selection-end-line="113" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/fourth/src/components/contributors/Volunteer.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="75" lean-forward="false" selection-start-line="2" selection-start-column="66" selection-end-line="2" selection-end-column="75" />
+        <state relative-caret-position="-7">
+          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -390,8 +398,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fourth/src/components/contributors/Contributors.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="87" column="20" lean-forward="false" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
+        <state relative-caret-position="233">
+          <caret line="172" column="0" lean-forward="true" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
           <folding>
             <element signature="e#1102#1196#0" expanded="true" />
           </folding>
