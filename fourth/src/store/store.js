@@ -82,6 +82,11 @@ export const sponsors = [
     pageUrl: 'http://www.logi-spot.com',
     imgUrl: 'http://placehold.it/200x200',
     name: 'Logispot'
+  },
+  {
+    pageUrl: 'http://coinone.co.kr',
+    imgUrl: 'http://placehold.it/200x200',
+    name: 'Coinone'
   }
 ]
 
