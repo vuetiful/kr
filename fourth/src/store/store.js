@@ -80,7 +80,7 @@ export const program = [
 export const sponsors = [
   {
     pageUrl: 'http://www.logi-spot.com',
-    imgUrl: 'http://placehold.it/200x200',
+    imgUrl: '/static/img/sponsor/logispot-512X512(t).png',
     name: 'Logispot'
   },
   {
