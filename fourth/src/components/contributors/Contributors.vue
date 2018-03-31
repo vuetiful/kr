@@ -1,5 +1,5 @@
 <template lang="html">
-  <el-container id="contributors" class="container" direction="vertical">
+  <el-container id="contributors" class="container" direction="vertical" v-bind:class="{ 'is-focused' : focused}">
     <h2 class="heading">
       도움의 손길
     </h2>
@@ -12,7 +12,7 @@
       </div>
     </el-container>
     <el-container class="container-volunteers">
-      <volunteer v-for="volunteer in volunteers" :volunteer="volunteer" :key="volunteer.name" @focusOnVolunteer="focusOnVolunteer" @unfocusOnVolunteer="unfocusOnVolunteer"></volunteer>
+      <volunteer v-for="volunteer in volunteers" :volunteer="volunteer" :key="volunteer.name" :data-id="volunteer.name" @focusOnVolunteer="focusOnVolunteer" @unFocusOnVolunteer="unFocusOnVolunteer"></volunteer>
     </el-container>
     <p class="participants">
       <span class="participant-sponsor" v-for="(participantSponsor, index) in participantSponsors" :key="index">
@@ -34,7 +34,9 @@ export default {
       sponsors,
       volunteers,
       participantSponsors,
-      regularParticipants
+      regularParticipants,
+      focused: false,
+      intervalIds: []
     }
   },
   components: {
@@ -49,9 +51,11 @@ export default {
     },
     injection (el) {
       const self = this
-      setInterval(function () {
+      var intervalId = setInterval(function () {
         self.moveOn(el)
-      }, 300)
+      }, Math.floor(Math.random() * (800 - 500 + 1) + 500))
+
+      this.intervalIds[el.getAttribute('data-id')] = intervalId
     },
     moveOn (el) {
       const minimumScopeOfActivityX = parseInt(document.querySelector('.container-volunteers').offsetHeight)
@@ -75,9 +79,13 @@ export default {
       el.style.transform = 'matrix3d(1, 1.74533e-06, 0, 0, -1.74533e-06, 1, 0, 0, 0, 0, 1, 0, ' + scopeOfActivityY + ', ' + scopeOfActivityX + ', 0, 1)'
     },
     focusOnVolunteer (volunteer) {
+      this.focused = true
+      clearInterval(this.intervalIds[volunteer.name])
       document.getElementById('dim-of-contributors').style.backgroundImage = 'url(' + volunteer.backgroundImageUrl + ')'
     },
-    unfocusOnVolunteer (volunteer) {
+    unFocusOnVolunteer (volunteer) {
+      this.focused = false
+      this.injection(document.querySelector('.container-volunteers > *[data-id=' + volunteer.name + ']'))
       document.getElementById('dim-of-contributors').style.backgroundImage = 'none'
     }
   },
@@ -88,6 +96,15 @@ export default {
 </script>
 
 <style lang="less">
+  #contributors.is-focused {
+    #dim-of-contributors {
+      z-index:98;
+    }
+    .container-volunteers {
+      z-index:99;
+    }
+  }
+
   #contributors {
     overflow:  hidden;
     height: 400px;
@@ -119,7 +136,7 @@ export default {
 
     .container-sponsor > .sponsors {
       margin : auto;
-      z-index: 9
+      z-index: 15;
     }
 
     .container-sponsor > .sponsors > .el-col {
@@ -138,12 +155,15 @@ export default {
 
     .container-volunteers {
       position : relative;
+      z-index : 10;
     }
 
     .container-volunteers > .el-container {
       position : absolute;
       opacity: .6;
       transition: opacity 300ms;
+      border: 2px solid #222;
+      border-radius: 50%;
 
       :hover {
         opacity: 1;
