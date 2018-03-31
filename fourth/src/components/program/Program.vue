@@ -37,8 +37,8 @@ export default {
 
 @background: #252827;
 
-@color-primary: #4298C3;
-@color-light: white;
+@color-primary: #42b883;
+@color-light: black;
 @spacing: 50px;
 @radius: 4px;
 
@@ -53,7 +53,7 @@ export default {
 /* Base */
 
 #program {
-  background: @background;
+  // background: @background;
   font-size: 16px;
 }
 
@@ -81,7 +81,8 @@ h1 {
   border-bottom-right-radius: @radius;
   border-top-right-radius: @radius;
   background: fade(@color-light, 3%);
-  color: fade(white, 80%);
+  // color: fade(white, 80%);
+  color: fade(black, 80%);
   font-family: @font-text;
   margin: @spacing auto;
   letter-spacing: 0.5px;
@@ -98,7 +99,7 @@ h1 {
    font-family: @font-title;
    letter-spacing: 1.5px;
    font-weight: 100;
-   font-size: 1.4em;
+   font-size: 1.2em;
   }
 
   .event {
