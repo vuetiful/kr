@@ -21,7 +21,9 @@
         </li>
       </ul>
     </el-container>
-    <p class="copyright">©2018 Vuetiful Korea. All rights reserved.</p>
+    <el-container class="copyright">
+      <p class="text">©2018 Vuetiful Korea. All rights reserved.</p>
+    </el-container>
   </el-footer>
 </template>
 
@@ -36,12 +38,33 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
   .el-dropdown-link {
     cursor: pointer;
     color: #409EFF;
   }
   .el-icon-arrow-down {
     font-size: 12px;
+  }
+
+  .el-footer {
+    height: 200px !important;
+    background-color: #444;
+    text-align: center;
+    padding: 0px;
+  }
+
+  .copyright {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    background-color: #333;
+    border-top: solid 1px #555;
+  }
+
+  .copyright .text {
+    color: white;
+    margin: auto;
   }
 </style>

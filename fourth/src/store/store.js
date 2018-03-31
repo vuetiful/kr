@@ -80,7 +80,7 @@ export const program = [
 export const sponsors = [
   {
     pageUrl: 'http://www.logi-spot.com',
-    imgUrl: 'http://placehold.it/100x100',
+    imgUrl: 'http://placehold.it/200x200',
     name: 'Logispot'
   }
 ]
@@ -89,57 +89,79 @@ export const volunteers = [
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
-    name: '이승민'
+    backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
+    name: '이승민',
+    description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
-    name: '박새미'
+    backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
+    name: '박새미',
+    description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
-    name: '양성민'
+    backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
+    name: '양성민',
+    description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
-    name: '우영준'
+    backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
+    name: '우영준',
+    description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
-    name: '권경덕'
+    backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
+    name: '권경덕',
+    description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'https://media.licdn.com/dms/image/C4E03AQGlhtKrF4Kw5g/profile-displayphoto-shrink_200_200/0?e=1527562800&v=alpha&t=CtK3XGzxnJDenplQQE-RYgR2XRAjT7TO60kIEEiGx5I',
     imgUrl: 'http://placehold.it/100x100',
-    name: '김영준'
+    backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
+    name: '김영준',
+    description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
-    name: '김찬연'
+    backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
+    name: '김찬연',
+    description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
-    name: '김범연'
+    backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
+    name: '김범연',
+    description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
-    name: '우경화'
+    backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
+    name: '우경화',
+    description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
-    name: '고예슬'
+    backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
+    name: '고예슬',
+    description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
-    name: '이선협'
+    backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
+    name: '이선협',
+    description: '설명을 입력해주세요.'
   }
 ]
 
