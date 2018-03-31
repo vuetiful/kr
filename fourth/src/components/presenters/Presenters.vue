@@ -31,9 +31,13 @@ export default {
 </script>
 
 <style lang="css" scoped>
+#presenters {
+  padding-bottom: 75px;
+  background: url("~@/assets/img/bg.png");
+}
 .heading {
   display: block;
   font-size: 4vh;
-  margin: 50px 0;
+  margin: 120px 0 50px;
 }
 </style>
