@@ -107,7 +107,8 @@ export default {
     }
 
     .container-sponsor > .sponsors {
-      margin : auto
+      margin : auto;
+      z-index: 9
     }
 
     .container-sponsor > .sponsors > .el-col {
