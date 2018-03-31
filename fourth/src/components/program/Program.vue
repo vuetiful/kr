@@ -3,12 +3,18 @@
     <div id="content">
       <h1>프로그램</h1>
       <ul class="timeline">
-        <li class="event" v-for="session of program" v-bind:data-date="session.time" v-bind:key="session.time">
-          <h3>{{ session.title }}</h3>
-          <div v-if="!!session.presenter">
-            <p>
-              {{ session.presenter.description }}
-            </p>
+        <li class="event" v-for="session of program" v-bind:key="session.time">
+          <div class="image">
+            <div>
+              <img src="http://placehold.it/100x100" />
+              <span>{{ session.time }}</span>
+            </div>
+          </div>
+          <div class="details">
+            <div>
+              <h3>{{ session.title }}</h3>
+              <p v-if="session.presenter != null">{{ session.presenter.description}}</p>
+            </div>
           </div>
         </li>
       </ul>
@@ -32,112 +38,85 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
-/* Variables */
-
-@background: #252827;
-
-@color-primary: #4298C3;
-@color-light: white;
-@spacing: 50px;
-@radius: 4px;
-
-@date: 120px;
-@dotborder: 4px;
-@dot: 11px;
-@line: 4px;
-
-@font-title: 'Oswald', sans-serif;
-@font-text: 'Source Sans Pro', sans-serif;
-
-/* Base */
-
-#program {
-  background: @background;
-  font-size: 16px;
-}
-
-strong {
-  font-weight: 600;
-}
-
-h1 {
- font-family: @font-title;
- letter-spacing: 1.5px;
- color: @color-light;
- font-weight: 100;
- font-size: 2.4em;
-}
-
-#content {
-  margin-top: @spacing;
-  text-align: center;
-}
-
-/* Timeline */
-
+<style lang="scss" scoped>
 .timeline {
-  border-left: @line solid @color-primary;
-  border-bottom-right-radius: @radius;
-  border-top-right-radius: @radius;
-  background: fade(@color-light, 3%);
-  color: fade(white, 80%);
-  font-family: @font-text;
-  margin: @spacing auto;
-  letter-spacing: 0.5px;
-  position: relative;
-  line-height: 1.4em;
-  font-size: 1.03em;
-  padding: @spacing;
-  list-style: none;
-  text-align: left;
-  font-weight: 100;
-  max-width: 40%;
+  background: #35495e;
+  color: #ffffff;
+  font-family: arial, sans-serif;
+}
+.item {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
 
-  h1, h2, h3 {
-   font-family: @font-title;
-   letter-spacing: 1.5px;
-   font-weight: 100;
-   font-size: 1.4em;
+  .image {
+    padding: 1em 2em;
+
+    > div {
+      position: relative;
+      text-align: center;
+      font-size: 0.8em;
+
+      &::after {
+        content: '';
+        width: 100%;
+        height: 0;
+        border-bottom: 1px solid #232b50;
+        position: absolute;
+        top: 2.75em;
+        left: 2.5em;
+        z-index: -1;
+      }
+    }
+
+    img {
+      border-radius: 50%;
+      height: 5em;
+      border: 0.35em solid #5ed3bf;
+    }
+    span {
+      display: block;
+      clear: both;
+      padding: 0.25em 0;
+      margin: 0.5em 0;
+      background: #3b4262;
+    }
   }
 
-  .event {
-    border-bottom: 1px dashed fade(@color-light, 10%);
-    padding-bottom: (@spacing * 0.5);
-    margin-bottom: @spacing;
+  .details {
     position: relative;
+    flex-grow: 1;
 
-    &:last-of-type {
-      padding-bottom: 0;
-      margin-bottom: 0;
-      border: none;
+    > div {
+      border: 1px solid #232b50;
+      border-radius: 0.5em;
+      padding: 1.5em;
+      margin: 1em 0;
+
+      h1 {
+        color: #5ed3bf;
+        font-size: 1.4em;
+        margin: 0;
+        padding: 0 0 0.5em 0;
+        letter-spacing: 0.1em;
+      }
+
+      p {
+        margin: 0;
+        padding: 0;
+        line-height: 150%;
+      }
     }
 
-    &:before, &:after {
+    &::before {
+      content: '';
+      width: 0;
+      height: 100%;
+      border-left: 1px solid #232b50;
       position: absolute;
-      display: block;
       top: 0;
-    }
-
-    &:before {
-      left: (((@date * 0.6) + @spacing + @line + @dot + (@dotborder * 2)) * 1.5) * -1;
-      color: fade(@color-light, 40%);
-      content: attr(data-date);
-      text-align: right;
-      font-weight: 100;
-      font-size: 0.9em;
-      min-width: @date;
-    }
-
-    &:after {
-      box-shadow: 0 0 0 @dotborder fade(@color-primary,100%);
-      left: (@spacing + @line + (@dot * 0.35)) * -1;
-      background: lighten(@background,5%);
-      border-radius: 50%;
-      height: @dot;
-      width: @dot;
-      content: "";
-      top: 5px;
+      left: -4.35em;
+      z-index: -1;
     }
   }
 }
