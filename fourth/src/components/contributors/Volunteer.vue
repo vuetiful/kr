@@ -1,6 +1,6 @@
 <template lang="html">
   <el-container>
-    <a :href="volunteer.pageUrl" v-on:mouseover="focusOnVolunteer(volunteer)" v-on:mouseleave="unFocusOnVolunteer(volunteer)">
+    <a :href="volunteer.pageUrl" v-on:mouseover="focusOnVolunteer(volunteer, $event)" v-on:mouseleave="unFocusOnVolunteer(volunteer, $event)">
       <img :src="volunteer.imgUrl" alt="프로필 사진">
       <span class="name">{{ volunteer.name }}</span>
       <div class="el-tooltip">
@@ -18,18 +18,18 @@ export default {
     }
   },
   methods: {
-    focusOnVolunteer (volunteer) {
-      this.$emit('focusOnVolunteer', volunteer)
+    focusOnVolunteer (volunteer, event) {
+      this.$emit('focusOnVolunteer', volunteer, event)
     },
-    unFocusOnVolunteer (volunteer) {
-      this.$emit('unFocusOnVolunteer', volunteer)
+    unFocusOnVolunteer (volunteer, event) {
+      this.$emit('unFocusOnVolunteer', volunteer, event)
     }
   }
 }
 </script>
 
 <style lang="less">
-  @focusColor: #0c0c0c;
+  @focus-color: #0c0c0c;
   a:hover .el-tooltip {
     opacity: 1;
   }
@@ -37,7 +37,7 @@ export default {
     bottom: -35px;
     position: absolute;
     width: 100%;
-    background-color: @focusColor;
+    background-color: @focus-color;
     color: #fff;
     text-align: center;
     padding: 5px 0;
@@ -54,6 +54,6 @@ export default {
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: transparent transparent @focusColor transparent;
+    border-color: transparent transparent @focus-color transparent;
   }
 </style>

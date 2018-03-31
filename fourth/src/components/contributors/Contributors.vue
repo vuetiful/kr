@@ -57,6 +57,9 @@ export default {
 
       this.intervalIds[el.getAttribute('data-id')] = intervalId
     },
+    painting (el) {
+      el.style.opacity = 0.6
+    },
     moveOn (el) {
       const minimumScopeOfActivityX = parseInt(document.querySelector('.container-volunteers').offsetHeight)
       const maximumScopeOfActivityY = parseInt(document.querySelector('.container-volunteers').offsetWidth)
@@ -78,13 +81,15 @@ export default {
       el.setAttribute('arithmetics', (el.getAttribute('arithmetics') === 'minus') ? 'plus' : 'minus')
       el.style.transform = 'matrix3d(1, 1.74533e-06, 0, 0, -1.74533e-06, 1, 0, 0, 0, 0, 1, 0, ' + scopeOfActivityY + ', ' + scopeOfActivityX + ', 0, 1)'
     },
-    focusOnVolunteer (volunteer) {
+    focusOnVolunteer (volunteer, event) {
       this.focused = true
+      event.currentTarget.style.opacity = 1
       clearInterval(this.intervalIds[volunteer.name])
       document.getElementById('dim-of-contributors').style.backgroundImage = 'url(' + volunteer.backgroundImageUrl + ')'
     },
-    unFocusOnVolunteer (volunteer) {
+    unFocusOnVolunteer (volunteer, event) {
       this.focused = false
+      event.currentTarget.style.opacity = null
       this.injection(document.querySelector('.container-volunteers > *[data-id=' + volunteer.name + ']'))
       document.getElementById('dim-of-contributors').style.backgroundImage = 'none'
     }
@@ -102,6 +107,9 @@ export default {
     }
     .container-volunteers {
       z-index:99;
+    }
+    .container-volunteers > .el-container > a {
+      opacity: 0.1;
     }
   }
 
@@ -162,15 +170,11 @@ export default {
       position : absolute;
       opacity: .6;
       transition: opacity 300ms;
-      border: 2px solid #222;
-      border-radius: 50%;
-
-      :hover {
-        opacity: 1;
-      }
 
       a {
         position : relative;
+        border: 2px solid #222;
+        border-radius: 50%;
       }
       > a > img {
         border-radius: 50%;
