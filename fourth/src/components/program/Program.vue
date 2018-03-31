@@ -54,6 +54,7 @@ export default {
   background: #35495e;
   color: #ffffff;
   font-family: arial, sans-serif;
+  padding: 50px 0;
 }
 .event:first-child .details::before {
   height: 90px;
