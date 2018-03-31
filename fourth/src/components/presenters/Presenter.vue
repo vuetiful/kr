@@ -1,5 +1,4 @@
 <template lang="html">
-
   <el-card :body-style="{ padding: '0px' }">
       <img src="http://element.eleme.io/static/hamburger.50e4091.png" class="image">
       <div class="card">

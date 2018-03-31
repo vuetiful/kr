@@ -112,7 +112,7 @@ export const volunteers = [
     name: '권경덕'
   },
   {
-    pageUrl: 'http://github.com/vuetiful',
+    pageUrl: 'https://media.licdn.com/dms/image/C4E03AQGlhtKrF4Kw5g/profile-displayphoto-shrink_200_200/0?e=1527562800&v=alpha&t=CtK3XGzxnJDenplQQE-RYgR2XRAjT7TO60kIEEiGx5I',
     imgUrl: 'http://placehold.it/100x100',
     name: '김영준'
   },
