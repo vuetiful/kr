@@ -1,6 +1,6 @@
 <template lang="html">
   <el-container>
-    <a :href="volunteer.pageUrl" v-on:mouseover="focusOnVolunteer(volunteer, $event)" v-on:mouseleave="unFocusOnVolunteer(volunteer, $event)">
+    <a :href="volunteer.pageUrl" target="_blank" v-on:mouseover="focusOnVolunteer(volunteer, $event)" v-on:mouseleave="unFocusOnVolunteer(volunteer, $event)">
       <img :src="volunteer.imgUrl" alt="프로필 사진">
       <span class="name">{{ volunteer.name }}</span>
       <div class="el-tooltip">
