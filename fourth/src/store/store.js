@@ -80,7 +80,7 @@ export const program = [
 export const sponsors = [
   {
     pageUrl: 'http://www.logi-spot.com',
-    imgUrl: 'http://placehold.it/100x100',
+    imgUrl: 'http://placehold.it/200x200',
     name: 'Logispot'
   }
 ]
@@ -89,56 +89,67 @@ export const volunteers = [
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
+    backgroundImageUrl: 'http://placehold.it/100x100',
     name: '이승민'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
+    backgroundImageUrl: 'http://placehold.it/100x100',
     name: '박새미'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
+    backgroundImageUrl: 'http://placehold.it/100x100',
     name: '양성민'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
+    backgroundImageUrl: 'http://placehold.it/100x100',
     name: '우영준'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
+    backgroundImageUrl: 'http://placehold.it/100x100',
     name: '권경덕'
   },
   {
     pageUrl: 'https://media.licdn.com/dms/image/C4E03AQGlhtKrF4Kw5g/profile-displayphoto-shrink_200_200/0?e=1527562800&v=alpha&t=CtK3XGzxnJDenplQQE-RYgR2XRAjT7TO60kIEEiGx5I',
     imgUrl: 'http://placehold.it/100x100',
+    backgroundImageUrl: 'http://placehold.it/100x100',
     name: '김영준'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
+    backgroundImageUrl: 'http://placehold.it/100x100',
     name: '김찬연'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
+    backgroundImageUrl: 'http://placehold.it/100x100',
     name: '김범연'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
+    backgroundImageUrl: 'http://placehold.it/100x100',
     name: '우경화'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
+    backgroundImageUrl: 'http://placehold.it/100x100',
     name: '고예슬'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
+    backgroundImageUrl: 'http://placehold.it/100x100',
     name: '이선협'
   }
 ]

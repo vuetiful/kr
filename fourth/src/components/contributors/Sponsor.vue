@@ -1,7 +1,11 @@
 <template lang="html">
   <el-container>
-    <a :href="sponsor.pageUrl"><img :src="sponsor.imgUrl" alt="후원사"></a>
-    <h3 class="heading">{{ sponsor.name }}</h3>
+    <a :href="sponsor.pageUrl">
+      <img :src="sponsor.imgUrl" :alt="'후원사' + sponsor.name">
+    </a>
+    <h3 class="heading">
+      {{ sponsor.name }}
+    </h3>
   </el-container>
 </template>
 
