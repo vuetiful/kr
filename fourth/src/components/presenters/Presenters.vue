@@ -1,13 +1,9 @@
 <template lang="html">
   <el-container id="presenters" class="container" direction="vertical">
     <h2 class="heading">발표자</h2>
-    <el-row :gutter="10">
-      <el-col :span="16" :offset="4">
-        <el-row>
-          <el-col :xs="24" :span="7" :offset="1" v-for="presentation in presentations" :key="presentation.title">
-            <presenter :presenter="presentation.presenter"></presenter>
-          </el-col>
-        </el-row>
+    <el-row type="flex" style="flex-wrap: wrap;" :gutter="20" justify="center">
+      <el-col :xs="18" :span="7" v-for="presentation in presentations" :key="presentation.title">
+        <presenter :presenter="presentation.presenter"></presenter>
       </el-col>
     </el-row>
   </el-container>

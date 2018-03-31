@@ -23,7 +23,7 @@ export default {
 
 <style lang="css" scoped>
   .el-card {
-    margin-bottom: 20px;
+    margin: 0 0 30px;
   }
 
   .card {
