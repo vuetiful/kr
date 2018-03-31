@@ -43,7 +43,7 @@ export default {
 <style lang="scss" scoped>
 #program {
   padding-bottom: 75px;
-  background: #35495e;
+  background: url("~@/assets/img/gridtile-dark.png"), #35495e;
 }
 .heading {
   font-size: 4vh;
