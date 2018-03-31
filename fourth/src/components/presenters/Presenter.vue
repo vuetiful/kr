@@ -1,11 +1,11 @@
 <template lang="html">
   <el-card :body-style="{ padding: '0px' }">
-      <img src="http://element.eleme.io/static/hamburger.50e4091.png" class="image">
+      <img :src="presenter.imgUrl" class="image">
       <div class="card">
-        <span>{{ presenter.name }}</span>
+        <span class="name">{{ presenter.name }}</span>
         <div class="bottom clearfix">
           <time class="time">{{ presenter.affiliation }}</time>
-          <el-button type="text" class="button">test</el-button>
+          <div class="description">{{ presenter.description }}</div>
         </div>
       </div>
     </el-card>
@@ -22,6 +22,10 @@ export default {
 </script>
 
 <style lang="css" scoped>
+  .el-card {
+    margin-bottom: 20px;
+  }
+
   .card {
     padding: 14px;
     text-align: left;
@@ -32,14 +36,21 @@ export default {
     color: #999;
   }
 
+  .name {
+    font-weight: bold;
+    font-size: 20px;
+    color: #42b883;
+  }
+
   .bottom {
-    margin-top: 13px;
+    margin-top: 10px;
     line-height: 12px;
   }
 
-  .button {
-    padding: 0;
-    float: right;
+  .description {
+    margin-top: 20px;
+    line-height: 17px;
+    font-size: 15px;
   }
 
   .image {

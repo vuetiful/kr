@@ -17,4 +17,9 @@ iframe {
  border-width: 0px;
  border: 0px;
 }
+
+.heading {
+  font-size: 4vh;
+  margin: 50px 0;
+}
 </style>
