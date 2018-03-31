@@ -11,7 +11,7 @@
       </div>
     </el-container>
     <el-container class="container-volunteers">
-      <volunteer v-for="volunteer in volunteers" :volunteer="volunteer" :key="volunteer.name"></volunteer>
+      <volunteer v-for="volunteer in volunteers" :volunteer="volunteer" :key="volunteer.name" @focusOnVolunteer="focusOnVolunteer" @unfocusOnVolunteer="unfocusOnVolunteer"></volunteer>
     </el-container>
     <p class="participants">
       <span class="participant-sponsor" v-for="(participantSponsor, index) in participantSponsors" :key="index">
@@ -63,14 +63,21 @@ export default {
         var currentScopeOfActivityX = parseInt(/\(\s*([^)]+?)\s*\)/.exec(getComputedStyle(el)['transform'])[0].split(/\s*,\s*/)[5].replace(/\)/g, '')) + 1
         var currentScopeOfActivityY = parseInt(/\(\s*([^)]+?)\s*\)/.exec(getComputedStyle(el)['transform'])[0].split(/\s*,\s*/)[4]) + 1
 
-        var jumpToX = Math.floor(Math.random() * (5 - 1 + 1) + 1)
-        var jumpToY = Math.floor(Math.random() * (5 - 1 + 1) + 1)
+        var jumpToX = Math.floor(Math.random() * (2 - 1 + 1) + 1)
+        var jumpToY = Math.floor(Math.random() * (2 - 1 + 1) + 1)
 
-        scopeOfActivityY = (currentScopeOfActivityY < maximumScopeOfActivityY) ? (currentScopeOfActivityY + jumpToY) : (currentScopeOfActivityY - jumpToY)
-        scopeOfActivityX = (currentScopeOfActivityX < minimumScopeOfActivityX) ? (currentScopeOfActivityX + jumpToX) : (currentScopeOfActivityX - jumpToX)
+        scopeOfActivityX = (currentScopeOfActivityX < minimumScopeOfActivityX) ? ((el.getAttribute('arithmetics') === 'plus') ? currentScopeOfActivityX - jumpToX : currentScopeOfActivityX + jumpToX) : (currentScopeOfActivityX - jumpToX)
+        scopeOfActivityY = (currentScopeOfActivityY < maximumScopeOfActivityY) ? ((el.getAttribute('arithmetics') === 'plus') ? currentScopeOfActivityY - jumpToY : currentScopeOfActivityY + jumpToY) : (currentScopeOfActivityY - jumpToY)
       }
 
+      el.setAttribute('arithmetics', (el.getAttribute('arithmetics') === 'minus') ? 'plus' : 'minus')
       el.style.transform = 'matrix3d(1, 1.74533e-06, 0, 0, -1.74533e-06, 1, 0, 0, 0, 0, 1, 0, ' + scopeOfActivityY + ', ' + scopeOfActivityX + ', 0, 1)'
+    },
+    focusOnVolunteer (volunteer) {
+      document.getElementById('contributors').style.backgroundImage = 'url(' + volunteer.backgroundImageUrl + ')'
+    },
+    unfocusOnVolunteer (volunteer) {
+      document.getElementById('contributors').style.backgroundImage = 'none'
     }
   },
   mounted () {
@@ -79,12 +86,13 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
   #contributors {
     overflow:  hidden;
     height: 400px;
     width: 100%;
     background-color: #262827;
+    background-size: cover;
 
     > h2 {
       font-size: 18px;
@@ -126,7 +134,9 @@ export default {
       a {
         position : relative;
       }
-
+      > a > img {
+        border-radius: 50%;
+      }
       .name {
         position: absolute;
         top: 0;
@@ -137,15 +147,7 @@ export default {
         color: #fff;
       }
     }
-    .name {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      left: 0;
-      text-align: center;
-      top: 45px;
-      color: #fff;
-    }
+
     p.participants {
       text-align: center;
       color: #fff;
