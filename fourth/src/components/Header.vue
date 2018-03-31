@@ -1,6 +1,6 @@
 <template lang="html">
   <transition name="fade">
-    <el-header class="header" v-show="scrollY > windowHeight && !mobile">
+    <el-header class="header" v-show="scrollY > windowHeight && !mobile && !smartphone">
       <el-container>
         <el-container>
           <h1 class="header-logo"><a href="#"><img src="../assets/logo.png" alt="메인으로 이동" style="width: 50px; height: 50px;"></a></h1>
