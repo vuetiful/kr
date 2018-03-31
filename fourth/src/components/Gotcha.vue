@@ -1,23 +1,31 @@
 <template lang="html">
   <el-container id="gotcha" class="gotcha" direction="vertical" :style="{ height: `${innerHeight}px` }">
-    <el-carousel :interval="10000" trigger="click" class="bg-carousel">
+    <el-carousel indicator-position="none" :interval="10000" trigger="click" class="bg-carousel">
       <el-carousel-item v-for="item in 3" :key="item"></el-carousel-item>
     </el-carousel>
     <div class="bg-dot"></div>
-    <div class="text-box" direction="vertical">
-      <img src="~@/assets/logo.png" alt="" class="logo">
-      <p class="date">2018. 04. 17 (화)</p>
-      <p class="time">19:30 ~ 21:00</p>
-      <p class="location">구글 캠퍼스 코리아 메인 이벤트 홀</p>
-      <a v-on:click="register" target="_blank" class="register-btn">참가 신청</a>
+    <div class="text-box">
+      <img src="~@/assets/logo.png" alt="" class="logo" :class="{ desktop }">
+      <p class="date">{{ generalInfo.date }}</p>
+      <p class="time">{{ generalInfo.time}}</p>
+      <p class="location">{{ generalInfo.location }}</p>
+      <el-button type="primary" @click="register" target="_blank" class="register-btn">참가 신청</el-button>
     </div>
-
-    <p class="intro">뷰티풀 코리아는...</p>
+    <p class="intro" v-if="!mobile && !smartphone">{{ generalInfo.intro }}</p>
+    <svg class="arrows">
+      <path class="a" d="M0 0 L15 16 L30 0"></path>
+    </svg>
   </el-container>
 </template>
 
 <script>
+import { generalInfo } from '@/store/store'
 export default {
+  data () {
+    return {
+      generalInfo
+    }
+  },
   computed: {
     innerHeight () {
       return window.innerHeight
@@ -35,7 +43,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style scoped>
 .gotcha {
   position: relative;
 }
@@ -43,6 +51,9 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
+}
+.el-carousel__item {
+  display: block;
 }
 .el-carousel__item:nth-child(3) {
   background: url("../assets/img/gotcha/meetup01.png") no-repeat center center;
@@ -75,60 +86,72 @@ export default {
   pointer-events: none;
 }
 .text-box {
-  padding: 5vw 12vw;
-  margin: auto;
-  font-size: 1.7vw;
-  color: #35495e;
+  margin: 18% auto 6%;
+  font-size: 1.2em;
+  color: white;
   line-height: 30px;
-  background: url("~@/assets/img/text_bg.png") no-repeat center center;
+  /* background: url("~@/assets/img/text_bg.png") no-repeat center center; */
   background-size: contain;
   background-blend-mode: overlay;
   z-index: 10;
 }
 .logo {
-  width: 20vw;
+  width: 14em;
   margin-bottom: 20px;
+}
+.logo.desktop {
+  width: 24em;
 }
 
 .text-box .time {
-  font-size: 1.3vw;
-  line-height: 45px;
+  font-size: 0.8em;
+  line-height: 36px;
 }
 
 .text-box .location {
   line-height: 50px;
 }
 .register-btn {
-  border: 1px solid #35495e;
-  color: #35495e;
-  margin-left: auto;
-  margin-right: auto;
-
-  width: 15vw;
-  padding: 0.75vw 0;
-  font-size: 1.3vw;
-  display: block;
-  margin-top: 30px;
-  border-radius: 2px;
-
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.register-btn:hover {
-  background-color: #35495e;
-  color: white;
-  transition: all 0.2s;
+  margin: 10px 0 30px;
 }
 
 .intro {
-  color: white;
-  z-index: 10;
   position: absolute;
   bottom: 100px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  font-size: 0.75em;
+  color: white;
+  line-height: 1.2;
+  z-index: 10;
+}
+
+.arrows {
+  width: 30px;
+  height: 16px;
+  position: absolute;
   left: 50%;
-  width: 240px;
-  margin-left: -120px;
+  margin-left: -15px;
+  bottom: 20px;
+  z-index: 10;
+}
+.arrows path {
+  stroke: white;
+  fill: transparent;
+  stroke-width: 1px;
+  animation: arrow 2s infinite;
+  -webkit-animation: arrow 2s infinite;
+}
+@keyframes arrow {
+  0% { opacity: 0 }
+  40% { opacity: 1 }
+  80% { opacity: 0 }
+  100% { opacity: 0 }
+}
+.arrows path.a {
+  animation-delay: -1s;
+  -webkit-animation-delay: -0.6s;
 }
 </style>
 
