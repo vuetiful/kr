@@ -53,15 +53,15 @@ export default {
       }, 300)
     },
     moveOn (el) {
-      const maximumScopeOfActivityY = parseInt(document.querySelector('.container-volunteers').offsetWidth)
       const minimumScopeOfActivityX = parseInt(document.querySelector('.container-volunteers').offsetHeight)
+      const maximumScopeOfActivityY = parseInt(document.querySelector('.container-volunteers').offsetWidth)
 
-      var scopeOfActivityY = Math.floor(maximumScopeOfActivityY - 0 + 1) + 0
-      var scopeOfActivityX = Math.floor(minimumScopeOfActivityX - 0 + 1) + 0
+      var scopeOfActivityX = Math.floor(Math.random() * minimumScopeOfActivityX - 0 + 1) + 0
+      var scopeOfActivityY = Math.floor(Math.random() * maximumScopeOfActivityY - 0 + 1) + 0
 
       if (getComputedStyle(el)['transform'] !== 'none') {
-        var currentScopeOfActivityY = parseInt(/\(\s*([^)]+?)\s*\)/.exec(getComputedStyle(el)['transform'])[0].split(/\s*,\s*/)[4]) + 1
         var currentScopeOfActivityX = parseInt(/\(\s*([^)]+?)\s*\)/.exec(getComputedStyle(el)['transform'])[0].split(/\s*,\s*/)[5].replace(/\)/g, '')) + 1
+        var currentScopeOfActivityY = parseInt(/\(\s*([^)]+?)\s*\)/.exec(getComputedStyle(el)['transform'])[0].split(/\s*,\s*/)[4]) + 1
 
         var jumpToX = Math.floor(Math.random() * (5 - 1 + 1) + 1)
         var jumpToY = Math.floor(Math.random() * (5 - 1 + 1) + 1)
