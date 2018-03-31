@@ -1,10 +1,10 @@
 <template lang="html">
   <el-container id="presenters" class="container" direction="vertical">
-    <h2 class="heading">Speakers</h2>
+    <h2 class="heading">발표자</h2>
     <el-row :gutter="10">
       <el-col :span="16" :offset="4">
         <el-row>
-          <el-col :span="7" :offset="1" v-for="presentation in presentations" :key="presentation.title">
+          <el-col :xs="24" :span="7" :offset="1" v-for="presentation in presentations" :key="presentation.title">
             <presenter :presenter="presentation.presenter"></presenter>
           </el-col>
         </el-row>
