@@ -1,12 +1,12 @@
 <template lang="html">
   <el-main>
-    <el-row>
+    <el-row class="row">
       <presenters></presenters>
     </el-row>
-    <el-row>
+    <el-row class="row">
       <program></program>
     </el-row>
-    <el-row>
+    <el-row class="row">
       <contributors></contributors>
     </el-row>
     <el-row>
@@ -36,7 +36,7 @@ export default {
   overflow-x: hidden;
 }
 
-.el-main .el-row {
+.el-main .row {
   padding-bottom: 50px;
 }
 </style>
