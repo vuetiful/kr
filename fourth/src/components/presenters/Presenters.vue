@@ -2,7 +2,7 @@
   <el-container id="presenters" class="container" direction="vertical">
     <h2 class="heading">발표자</h2>
     <el-row type="flex" style="flex-wrap: wrap;" :gutter="20" justify="center">
-      <el-col :xs="18" :span="7" v-for="presentation in presentations" :key="presentation.title">
+      <el-col :xs="18" :sm="7" :lg="5" v-for="presentation in presentations" :key="presentation.title">
         <presenter :presenter="presentation.presenter"></presenter>
       </el-col>
     </el-row>
