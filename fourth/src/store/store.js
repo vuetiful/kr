@@ -15,7 +15,7 @@ export const presentations = [
     time: '19:35',
     title: '아뇨, 난 Vue.js 사용할건데요?',
     presenter: {
-      imgUrl: '/static/img/presenters/june.png',
+      imgUrl: '/static/img/presenters/hax0r.jpg',
       name: '우영준',
       affiliation: 'Logispot',
       description: '로지스팟에서 리드 개발을 하고 있는 24 우영준입니다!'
@@ -35,7 +35,7 @@ export const presentations = [
     time: '20:30',
     title: 'Apollo로 알아보는 Vue in the GraphQL',
     presenter: {
-      imgUrl: '/static/img/presenters/hax0r.jpg',
+      imgUrl: '/static/img/presenters/june.png',
       name: '최준석',
       affiliation: 'NHN Bugs',
       description: '본 세션은 GraphQL에 대한 약간의 사전 지식이 필요로 하며, Server feature에 대한 설명이 포함될 수 있습니다.'
