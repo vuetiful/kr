@@ -35,8 +35,4 @@ export default {
   padding: 0;
   overflow-x: hidden;
 }
-
-.el-main .el-row {
-  padding-bottom: 50px;
-}
 </style>
