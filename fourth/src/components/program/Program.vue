@@ -1,19 +1,21 @@
 <template lang="html">
   <el-container id="program" class="container" direction="vertical">
-    <div id="content">
-      <h1>프로그램</h1>
+    <div>
+      <h2 class="heading">프로그램</h2>
       <ul class="timeline">
         <li class="event" v-for="session of program" v-bind:key="session.time">
           <div class="image">
             <div>
-              <img src="http://placehold.it/100x100" />
-              <span>{{ session.time }}</span>
+              <img v-if="session.presenter != null" :src="session.presenter.imgUrl" />
+              <div class="container-img" v-else><div class="img"></div></div>
+              <span :class="{ 'regular-event': session.presenter == null }">{{ session.time }}</span>
             </div>
           </div>
           <div class="details">
             <div>
-              <h3>{{ session.title }}</h3>
+              <h3 :class="{ 'regular-event': session.presenter == null }">{{ session.title }}</h3>
               <p v-if="session.presenter != null">{{ session.presenter.description}}</p>
+              <p v-else></p>
             </div>
           </div>
         </li>
@@ -39,72 +41,111 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#program {
+  padding-bottom: 75px;
+  background: #35495e;
+}
+.heading {
+  font-size: 4vh;
+  margin: 120px 0 50px;
+  color: white;
+}
 .timeline {
   background: #35495e;
   color: #ffffff;
   font-family: arial, sans-serif;
 }
-.item {
+.event:first-child .details::before {
+  height: 90px;
+  top: 53px;
+}
+.event:last-child .details::before {
+  height: 55px;
+}
+.event {
   display: flex;
-  max-width: 1000px;
+  max-width: 920px;
   margin: 0 auto;
 
   .image {
+    position: relative;
     padding: 1em 2em;
+    z-index: 1;
 
     > div {
       position: relative;
       text-align: center;
       font-size: 0.8em;
 
-      &::after {
-        content: '';
-        width: 100%;
-        height: 0;
-        border-bottom: 1px solid #232b50;
-        position: absolute;
-        top: 2.75em;
-        left: 2.5em;
-        z-index: -1;
-      }
+      // &::after {
+      //   content: '';
+      //   width: 100%;
+      //   height: 0;
+      //   border-bottom: 1px solid rgba(255,255,255,0.75);
+      //   position: absolute;
+      //   top: 2.9em;
+      //   left: 3em;
+      //   z-index: 0;
+      // }
     }
 
     img {
+      margin: auto 0;
       border-radius: 50%;
       height: 5em;
-      border: 0.35em solid #5ed3bf;
+      border: 0.3em solid #42b883;
+    }
+    .container-img {
+      padding: 33px 0;
+    }
+    .img {
+      margin: auto;
+      border-radius: 50%;
+      width: 0.75em;
+      height: 0.75em;
+      background: #42b883;
     }
     span {
       display: block;
       clear: both;
+      width: 6em;
       padding: 0.25em 0;
       margin: 0.5em 0;
-      background: #3b4262;
+      color: #42b883;
+    }
+    span.regular-event {
+      position: relative;
+      top: -24px;
+      padding: 0;
+      margin: 0;
     }
   }
-
   .details {
     position: relative;
     flex-grow: 1;
-
+    text-align: left;
     > div {
-      border: 1px solid #232b50;
-      border-radius: 0.5em;
-      padding: 1.5em;
+      padding: 1em;
       margin: 1em 0;
 
-      h1 {
-        color: #5ed3bf;
+      h3 {
+        color: white;
         font-size: 1.4em;
         margin: 0;
         padding: 0 0 0.5em 0;
         letter-spacing: 0.1em;
+        line-height: 1.2em;
+      }
+      h3.regular-event {
+        margin-top: 10px;
+        padding: 0;
       }
 
       p {
         margin: 0;
         padding: 0;
         line-height: 150%;
+        color: #aaa;
       }
     }
 
@@ -112,11 +153,11 @@ export default {
       content: '';
       width: 0;
       height: 100%;
-      border-left: 1px solid #232b50;
+      border-left: 1px solid rgba(255,255,255,0.75);
       position: absolute;
       top: 0;
-      left: -4.35em;
-      z-index: -1;
+      left: -4.43em;
+      z-index: 0;
     }
   }
 }
