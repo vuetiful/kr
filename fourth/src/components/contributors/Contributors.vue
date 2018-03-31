@@ -3,6 +3,7 @@
     <h2 class="heading">
       도움의 손길
     </h2>
+    <div id="dim-of-contributors"></div>
     <el-container class="container-sponsor">
       <div class="sponsors">
         <el-col v-for="sponsor in sponsors" :key="sponsor.name">
@@ -74,10 +75,10 @@ export default {
       el.style.transform = 'matrix3d(1, 1.74533e-06, 0, 0, -1.74533e-06, 1, 0, 0, 0, 0, 1, 0, ' + scopeOfActivityY + ', ' + scopeOfActivityX + ', 0, 1)'
     },
     focusOnVolunteer (volunteer) {
-      document.getElementById('contributors').style.backgroundImage = 'url(' + volunteer.backgroundImageUrl + ')'
+      document.getElementById('dim-of-contributors').style.backgroundImage = 'url(' + volunteer.backgroundImageUrl + ')'
     },
     unfocusOnVolunteer (volunteer) {
-      document.getElementById('contributors').style.backgroundImage = 'none'
+      document.getElementById('dim-of-contributors').style.backgroundImage = 'none'
     }
   },
   mounted () {
@@ -92,12 +93,22 @@ export default {
     height: 400px;
     width: 100%;
     background-color: #262827;
-    background-size: cover;
 
     > h2 {
       font-size: 18px;
       font-weight: 800;
-      color: #fff
+      color: #fff;
+      z-index: 9;
+      margin-top: 15px;
+    }
+
+    #dim-of-contributors {
+      position:absolute;
+      top:0px;
+      left:0px;
+      height:100%;
+      width:100%;
+      background-size: cover;
     }
 
     .container-sponsor {
@@ -131,6 +142,12 @@ export default {
 
     .container-volunteers > .el-container {
       position : absolute;
+      opacity: .6;
+      transition: opacity 300ms;
+
+      :hover {
+        opacity: 1;
+      }
 
       a {
         position : relative;
@@ -150,9 +167,11 @@ export default {
     }
 
     p.participants {
+      position:relative;
       text-align: center;
       color: #fff;
       padding: 20px;
+      z-index:9
     }
   }
 </style>

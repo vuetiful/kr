@@ -4,7 +4,7 @@
       <img :src="volunteer.imgUrl" alt="프로필 사진">
       <span class="name">{{ volunteer.name }}</span>
       <div class="el-tooltip">
-        ddd
+        {{ volunteer.description }}
       </div>
     </a>
   </el-container>
@@ -36,7 +36,7 @@ export default {
   .el-tooltip {
     bottom: -35px;
     position: absolute;
-    width: 120px;
+    width: 100%;
     background-color: @focusColor;
     color: #fff;
     text-align: center;
