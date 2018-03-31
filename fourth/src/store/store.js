@@ -90,67 +90,78 @@ export const volunteers = [
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
     backgroundImageUrl: 'http://placehold.it/100x100',
-    name: '이승민'
+    name: '이승민',
+    description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
     backgroundImageUrl: 'http://placehold.it/100x100',
-    name: '박새미'
+    name: '박새미',
+    description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
     backgroundImageUrl: 'http://placehold.it/100x100',
-    name: '양성민'
+    name: '양성민',
+    description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
     backgroundImageUrl: 'http://placehold.it/100x100',
-    name: '우영준'
+    name: '우영준',
+    description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
     backgroundImageUrl: 'http://placehold.it/100x100',
-    name: '권경덕'
+    name: '권경덕',
+    description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'https://media.licdn.com/dms/image/C4E03AQGlhtKrF4Kw5g/profile-displayphoto-shrink_200_200/0?e=1527562800&v=alpha&t=CtK3XGzxnJDenplQQE-RYgR2XRAjT7TO60kIEEiGx5I',
     imgUrl: 'http://placehold.it/100x100',
     backgroundImageUrl: 'http://placehold.it/100x100',
-    name: '김영준'
+    name: '김영준',
+    description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
     backgroundImageUrl: 'http://placehold.it/100x100',
-    name: '김찬연'
+    name: '김찬연',
+    description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
     backgroundImageUrl: 'http://placehold.it/100x100',
-    name: '김범연'
+    name: '김범연',
+    description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
     backgroundImageUrl: 'http://placehold.it/100x100',
-    name: '우경화'
+    name: '우경화',
+    description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
     backgroundImageUrl: 'http://placehold.it/100x100',
-    name: '고예슬'
+    name: '고예슬',
+    description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/100x100',
     backgroundImageUrl: 'http://placehold.it/100x100',
-    name: '이선협'
+    name: '이선협',
+    description: '설명을 입력해주세요.'
   }
 ]
 
