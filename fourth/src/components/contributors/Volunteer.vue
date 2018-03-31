@@ -1,6 +1,6 @@
 <template lang="html">
   <el-container>
-    <a :href="volunteer.pageUrl" v-on:mouseover="focusOnVolunteer(volunteer)" v-on:mouseleave="unfocusOnVolunteer(volunteer)">
+    <a :href="volunteer.pageUrl" v-on:mouseover="focusOnVolunteer(volunteer)" v-on:mouseleave="unFocusOnVolunteer(volunteer)">
       <img :src="volunteer.imgUrl" alt="프로필 사진">
       <span class="name">{{ volunteer.name }}</span>
       <div class="el-tooltip">
@@ -21,8 +21,8 @@ export default {
     focusOnVolunteer (volunteer) {
       this.$emit('focusOnVolunteer', volunteer)
     },
-    unfocusOnVolunteer (volunteer) {
-      this.$emit('unfocusOnVolunteer', volunteer)
+    unFocusOnVolunteer (volunteer) {
+      this.$emit('unFocusOnVolunteer', volunteer)
     }
   }
 }
