@@ -114,8 +114,8 @@ export default {
       ]
     },
     assignPosition (el) {
-      const maximumScopeOfActivityX = parseInt(document.querySelector('.container-volunteers').offsetWidth) - 100
-      const maximumScopeOfActivityY = parseInt(document.querySelector('.container-volunteers').offsetHeight) - 100
+      const maximumScopeOfActivityX = parseInt(document.querySelector('.container-volunteers').offsetWidth) - 150
+      const maximumScopeOfActivityY = parseInt(document.querySelector('.container-volunteers').offsetHeight) - 150
 
       const maxScopeX = 15
       const maxScopeY = 15
