@@ -74,7 +74,7 @@ export default {
         if (typeof self.assignedPositions[el.getAttribute('data-id')] === 'undefined') {
           self.assignedPositions[el.getAttribute('data-id')] = moveOn
         }
-      }, Math.floor(Math.random() * (500 - 300 + 1) + 500))
+      }, Math.floor(Math.random() * (500 - 300 + 1) + 300))
 
       this.intervalIds[el.getAttribute('data-id')] = intervalId
       setTimeout(function () {
@@ -171,7 +171,7 @@ export default {
       var interval = window.setInterval(function () {
         node.style.webkitMask = '-webkit-gradient(radial, 17 17, ' + radius + ', 17 17, ' + (radius + 15) + ', from(rgb(0, 0, 0)), color-stop(0.5, rgba(0, 0, 0, 0.2)), to(rgb(0, 0, 0)))'
         radius++
-        if (node.offsetWidth === radius) {
+        if ((node.offsetWidth + 15) === radius) {
           window.clearInterval(interval)
         }
       }, 10)
