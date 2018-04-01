@@ -67,6 +67,7 @@ export default {
     text-align: center;
     padding: 50px 0 0 0 ;
     color: white;
+    position: relative;
   }
 
   .container .head {
