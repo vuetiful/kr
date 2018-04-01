@@ -27,6 +27,7 @@
 import { sponsors, volunteers, participantSponsors, regularParticipants } from '@/store/store'
 import Sponsor from '@/components/contributors/Sponsor'
 import Volunteer from '@/components/contributors/Volunteer'
+var Promise = require('bluebird')
 export default {
   data () {
     return {
@@ -90,6 +91,10 @@ export default {
       var x = (maximumScopeOfActivityX / Object.keys(this.volunteers).length) * Object.keys(this.assignedPositions).length
       var y = Math.floor(Math.random() * (maximumScopeOfActivityY - 100 + 1) + 100)
 
+      if (maximumScopeOfActivityY <= (y + volunteerExtraSpace)) {
+        y = (y - volunteerExtraSpace)
+      }
+
       if (x >= (sponsorFirstRect.x - sponsorExtraSpace) && x <= (sponsorLastRect.x + sponsorExtraSpace)) {
         x = Math.floor(Math.random() * (500 - 300 + 1) + 300) + (((x - (sponsorFirstRect.x - sponsorExtraSpace)) <= (x - (sponsorLastRect.x + sponsorExtraSpace))) ? x + (x - (sponsorFirstRect.x - sponsorExtraSpace)) : x - (x - (sponsorLastRect.x + sponsorExtraSpace)))
       }
@@ -107,10 +112,10 @@ export default {
         }
       }
 
-      var moveTo = Math.floor(Math.random() * (200 - 100 + 1) + 100)
+      var moveTo = Math.floor(Math.random() * (100 - 10 + 1) + 10)
 
-      x = (trespassOnX) ? ((maximumScopeOfActivityX <= (x + volunteerExtraSpace)) ? (x - moveTo) : (x + moveTo)) : x
-      y = (trespassOnY) ? ((maximumScopeOfActivityY <= (y + volunteerExtraSpace)) ? (y - moveTo) : (y + moveTo)) : y
+      x = (trespassOnX) ? ((maximumScopeOfActivityX <= (x + volunteerExtraSpace)) ? (x - volunteerExtraSpace) : (x + moveTo)) : x
+      y = (trespassOnY) ? ((maximumScopeOfActivityY <= (y + volunteerExtraSpace)) ? (y - volunteerExtraSpace) : (y + moveTo)) : y
 
       return [
         x,
