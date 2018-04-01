@@ -85,12 +85,14 @@
       <find>focusOnVolunteer</find>
       <find>unFocusOnVolunteer</find>
       <find>participants</find>
-      <find>container-volunteers</find>
       <find>focusColor</find>
       <find>el-container</find>
       <find>backgroundImageUrl: 'http://placehold.it/100x100'</find>
-      <find>tooltip</find>
       <find>painting</find>
+      <find>tooltip</find>
+      <find>h3</find>
+      <find>container-volunteers</find>
+      <find>checkVisible</find>
     </findStrings>
     <replaceStrings>
       <replace>focusColor</replace>
@@ -105,9 +107,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/fourth/src/components/contributors/Sponsor.vue" />
         <option value="$PROJECT_DIR$/fourth/src/store/store.js" />
-        <option value="$PROJECT_DIR$/fourth/src/components/contributors/Contributors.vue" />
         <option value="$PROJECT_DIR$/fourth/src/components/contributors/Volunteer.vue" />
         <option value="$PROJECT_DIR$/fourth/package-lock.json" />
       </list>
@@ -122,9 +122,10 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/fourth/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1680" />
-    <option name="height" value="1050" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -279,6 +280,9 @@
       <option name="presentableId" value="Default" />
       <updated>1522479495754</updated>
       <workItem from="1522479497152" duration="7037000" />
+      <workItem from="1522548970860" duration="299000" />
+      <workItem from="1522551373813" duration="1943000" />
+      <workItem from="1522563699418" duration="3365000" />
     </task>
     <servers />
   </component>
@@ -589,20 +593,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fourth/src/components/program/Program.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
+        <state relative-caret-position="-322">
           <caret line="45" column="10" lean-forward="false" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fourth/src/components/contributors/Sponsor.vue">
+    <entry file="file://$PROJECT_DIR$/fourth/src/components/contributors/Volunteer.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fourth/src/store/store.js">
+    <entry file="file://$PROJECT_DIR$/fourth/src/components/contributors/Sponsor.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="82" column="56" lean-forward="false" selection-start-line="82" selection-start-column="56" selection-end-line="82" selection-end-column="56" />
