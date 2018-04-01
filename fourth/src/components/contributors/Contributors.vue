@@ -275,7 +275,7 @@ export default {
       position: relative;
 
       img {
-        max-width : 100%;
+        width: 100%;
       }
 
       > .el-col {
@@ -287,10 +287,9 @@ export default {
       }
 
       > .el-col > .el-container h3{
-        font-weight: bold;
+        font-size: 1.2em;
         margin-top: 8px;
         color: #111;
-        text-decoration: underline;
       }
     }
 
@@ -298,7 +297,7 @@ export default {
       position : absolute;
       z-index : 10;
       width:100%;
-      height:100%;
+      height:85%;
       display: block;
 
       > .el-container {
@@ -311,7 +310,7 @@ export default {
         a {
           display: block;
           position : relative;
-          border: 2px solid #222;
+          border: 1px solid #ccc;
           border-radius: 50%;
         }
         > a > img {
@@ -320,13 +319,14 @@ export default {
         }
         .name {
           position: absolute;
-          top: 50%;
+          top: 75%;
           width: 100%;
           left: 0;
           text-align: center;
           color: #fff;
+          text-shadow: 0 0 2px #35495e;
           font-size: 80%;
-          font-weight: 800;
+          font-weight: 500;
           transform: translateY(-50%);
         }
       }
