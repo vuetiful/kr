@@ -75,7 +75,7 @@ export default {
         if (typeof self.assignedPositions[el.getAttribute('data-id')] === 'undefined') {
           self.assignedPositions[el.getAttribute('data-id')] = moveOn
         }
-      }, Math.floor(Math.random() * (800 - 500 + 1) + 500))
+      }, Math.floor(Math.random() * (500 - 300 + 1) + 500))
 
       this.intervalIds[el.getAttribute('data-id')] = intervalId
       setTimeout(function () {
