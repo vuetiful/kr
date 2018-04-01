@@ -1,7 +1,5 @@
 <template lang="html">
   <el-container id="contributors" class="container" direction="vertical" v-bind:class="{ 'is-focused' : focused}">
-    <h2 class="heading">Contributors</h2>
-    <span class="subheading">도움의 손길</span>
     <div id="dim-of-contributors"></div>
     <el-container class="container-sponsor">
       <el-row class="sponsors" :gutter="20" type="flex" style="flex-wrap: wrap;" justify="center">
@@ -251,18 +249,10 @@ export default {
   }
 
   #contributors {
+    padding: 60px 0 40px;
     background-color: #fff;
     width: 100%;
-    // height: 400px;
     overflow:  hidden;
-
-    > h2 {
-      font-size: 18px;
-      font-weight: 800;
-      color: #111;
-      z-index: 9;
-      margin-top: 15px;
-    }
 
     #dim-of-contributors {
       position:absolute;
@@ -344,8 +334,10 @@ export default {
 
     p.participants {
       position:relative;
+      margin-top: 20px;
+      font-size: 0.8em;
       text-align: center;
-      color: #fff;
+      color: #35495e;
       padding: 20px;
       z-index:9
     }

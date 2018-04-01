@@ -128,6 +128,6 @@ export default {
   }
   .bottom-line {
     width: 100%;
-    background: #333;
+    background: url("~@/assets/img/gridtile-dark.png"), #333;
   }
 </style>

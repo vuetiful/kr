@@ -1,7 +1,9 @@
 <template lang="html">
-  <el-container class="container">
-    <el-button @click="goToTop" type="success" icon="el-icon-arrow-up" circle></el-button>
-  </el-container>
+  <transition name="fade">
+    <el-container class="container" v-show="scrollY >= 100">
+      <el-button @click="goToTop" type="primary" size="mini" icon="el-icon-arrow-up" circle></el-button>
+    </el-container>
+  </transition>
 </template>
 
 <script>
@@ -16,9 +18,16 @@ export default {
 </script>
 
 <style lang="css" scoped>
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
   .container {
     position: fixed;
-    right: 10px;
-    bottom: 55px;
+    right: 20px;
+    bottom: 72px;
+    z-index: 1000;
   }
 </style>
