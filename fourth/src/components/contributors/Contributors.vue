@@ -35,7 +35,8 @@ export default {
       participantSponsors,
       regularParticipants,
       focused: false,
-      intervalIds: []
+      intervalIds: [],
+      assignedPositions: {}
     }
   },
   components: {
@@ -69,7 +70,10 @@ export default {
     injection (el) {
       const self = this
       var intervalId = setInterval(function () {
-        self.moveOn(el)
+        const moveOn = self.moveOn(el)
+        if (typeof self.assignedPositions[el.getAttribute('data-id')] === 'undefined') {
+          self.assignedPositions[el.getAttribute('data-id')] = moveOn
+        }
       }, Math.floor(Math.random() * (800 - 500 + 1) + 500))
 
       this.intervalIds[el.getAttribute('data-id')] = intervalId
@@ -86,27 +90,27 @@ export default {
       var x = (maximumScopeOfActivityX / Object.keys(this.volunteers).length) * Object.keys(this.assignedPositions).length
       var y = Math.floor(Math.random() * (maximumScopeOfActivityY - 100 + 1) + 100)
 
-      if (x >= (sponsorFirstRect.x -  sponsorExtraSpace) && x <= (sponsorLastRect.x + sponsorExtraSpace)) {
-        x = Math.floor(Math.random() * (500 - 300 + 1) + 300) + (((x - (sponsorFirstRect.x -  sponsorExtraSpace)) <= (x - (sponsorLastRect.x + sponsorExtraSpace))) ? x + (x - (sponsorFirstRect.x -  sponsorExtraSpace)) : x - (x - (sponsorLastRect.x + sponsorExtraSpace)))
+      if (x >= (sponsorFirstRect.x - sponsorExtraSpace) && x <= (sponsorLastRect.x + sponsorExtraSpace)) {
+        x = Math.floor(Math.random() * (500 - 300 + 1) + 300) + (((x - (sponsorFirstRect.x - sponsorExtraSpace)) <= (x - (sponsorLastRect.x + sponsorExtraSpace))) ? x + (x - (sponsorFirstRect.x - sponsorExtraSpace)) : x - (x - (sponsorLastRect.x + sponsorExtraSpace)))
       }
 
-      var trespassOnX = false;
-      var trespassOnY = false;
+      var trespassOnX = false
+      var trespassOnY = false
 
       for (var i = 0; i < Object.keys(this.assignedPositions).length; i++) {
         const assignedPosition = this.assignedPositions[Object.keys(this.assignedPositions)[i]]
         if (x >= assignedPosition[0] && x <= (assignedPosition[0] + volunteerExtraSpace)) {
-          trespassOnX = true;
+          trespassOnX = true
         }
         if (y >= assignedPosition[1] && y <= (assignedPosition[1] + volunteerExtraSpace)) {
-          trespassOnY = true;
+          trespassOnY = true
         }
       }
 
       var moveTo = Math.floor(Math.random() * (200 - 100 + 1) + 100)
 
-      x = ( trespassOnX ) ? ((maximumScopeOfActivityX <= (x+volunteerExtraSpace))? (x-moveTo) : (x+moveTo)) : x;
-      y = ( trespassOnX ) ? ((maximumScopeOfActivityY <= (y+volunteerExtraSpace))? (y-moveTo) : (y+moveTo)) : y;
+      x = (trespassOnX) ? ((maximumScopeOfActivityX <= (x + volunteerExtraSpace)) ? (x - moveTo) : (x + moveTo)) : x
+      y = (trespassOnY) ? ((maximumScopeOfActivityY <= (y + volunteerExtraSpace)) ? (y - moveTo) : (y + moveTo)) : y
 
       return [
         x,
