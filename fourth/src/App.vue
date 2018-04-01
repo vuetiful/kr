@@ -41,3 +41,18 @@ export default {
   background-color: #f0f0f0;
 }
 </style>
+<style>
+h2.heading {
+  font-size: 5vh;
+  margin: 120px 0 0;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  color: #42b883;
+  text-shadow: 1px 1px #35495e;
+}
+span.subheading {
+  display: block;
+  margin: 12px 0 50px;
+  color: #35495e;
+}
+</style>
