@@ -15,10 +15,10 @@ export default {}
   background: url("~@/assets/img/bg.png");
 }
 iframe {
- width: 100%;
- height: 450px;
- /* frameborder: 0; */
- border-width: 0px;
- border: 0px;
+  width: 100%;
+  height: 450px;
+  /* frameborder: 0; */
+  border-width: 0px;
+  border: 0px;
 }
 </style>

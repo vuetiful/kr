@@ -3,33 +3,27 @@
     <el-row>
       <gotcha></gotcha>
     </el-row>
-    <el-row>
-      <p class="intro">{{ generalInfo.intro }}</p>
-    </el-row>
     <app-header></app-header>
     <app-main></app-main>
     <app-footer></app-footer>
+    <side-button></side-button>
   </div>
 </template>
 
 <script>
 import Gotcha from '@/components/Gotcha'
-import { generalInfo } from '@/store/store'
 import Header from '@/components/Header'
 import Main from '@/components/Main'
 import Footer from '@/components/Footer'
+import SideButton from '@/components/SideButton'
 export default {
   name: 'App',
-  data () {
-    return {
-      generalInfo
-    }
-  },
   components: {
     Gotcha,
     AppHeader: Header,
     AppMain: Main,
-    AppFooter: Footer
+    AppFooter: Footer,
+    SideButton: SideButton
   }
 }
 </script>
@@ -42,13 +36,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   background-color: #f0f0f0;
-}
-.intro {
-  padding: 10px 20px;
-  font-size: 0.8em;
-  line-height: 1.5;
-  color: white;
-  background: #161e26;
 }
 </style>
 <style>

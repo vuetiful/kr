@@ -7,7 +7,7 @@ export const generalInfo = {
   date: '2018. 04. 17 (화)',
   time: '19:30 ~ 21:30',
   location: '@구글 캠퍼스 서울 메인 이벤트 홀',
-  intro: 'Vuetiful Korea(뷰티풀 코리아)는 관심주제 발표를 듣고 서로 관련 경험을 공유하며 네트워킹하는 모임으로, 2017년 4월 19일에 개최된 Vue.js 한국어 사용자 모임에서 시작하였습니다.'
+  intro: 'Vuetiful Korea(뷰티풀 코리아)는 Vue.js에 대한 관심주제 발표를 듣고 서로 관련 경험을 공유하며 네트워킹하는 모임으로, 2017년 4월 19일에 개최된 Vue.js 한국어 사용자 모임에서 시작하였습니다.'
 }
 
 export const presentations = [
@@ -96,77 +96,77 @@ export const sponsors = [
 export const volunteers = [
   {
     pageUrl: 'http://github.com/vuetiful',
-    imgUrl: '/static/img/volunteers/no-profile.jpg',
+    imgUrl: 'http://placehold.it/50x50',
     backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
     name: '이승민',
     description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
-    imgUrl: '/static/img/volunteers/no-profile.jpg',
+    imgUrl: 'http://placehold.it/50x50',
     backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
     name: '박새미',
     description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
-    imgUrl: '/static/img/volunteers/no-profile.jpg',
+    imgUrl: 'http://placehold.it/50x50',
     backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
     name: '양성민',
     description: '설명을 입력해주세요.'
   },
   {
-    pageUrl: 'http://github.com/webhacking',
-    imgUrl: '/static/img/presenters/hax0r.jpg',
+    pageUrl: 'http://github.com/vuetiful',
+    imgUrl: 'http://placehold.it/50x50',
     backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
     name: '우영준',
     description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
-    imgUrl: '/static/img/volunteers/no-profile.jpg',
+    imgUrl: 'http://placehold.it/50x50',
     backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
     name: '권경덕',
     description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'https://media.licdn.com/dms/image/C4E03AQGlhtKrF4Kw5g/profile-displayphoto-shrink_200_200/0?e=1527562800&v=alpha&t=CtK3XGzxnJDenplQQE-RYgR2XRAjT7TO60kIEEiGx5I',
-    imgUrl: '/static/img/volunteers/no-profile.jpg',
+    imgUrl: 'http://placehold.it/50x50',
     backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
     name: '김영준',
     description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
-    imgUrl: '/static/img/volunteers/no-profile.jpg',
+    imgUrl: 'http://placehold.it/50x50',
     backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
     name: '김찬연',
     description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
-    imgUrl: '/static/img/volunteers/no-profile.jpg',
+    imgUrl: 'http://placehold.it/50x50',
     backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
     name: '김범연',
     description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
-    imgUrl: '/static/img/volunteers/no-profile.jpg',
+    imgUrl: 'http://placehold.it/50x50',
     backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
     name: '우경화',
     description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
-    imgUrl: '/static/img/volunteers/no-profile.jpg',
+    imgUrl: 'http://placehold.it/50x50',
     backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
     name: '고예슬',
     description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
-    imgUrl: '/static/img/volunteers/no-profile.jpg',
+    imgUrl: 'http://placehold.it/50x50',
     backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
     name: '이선협',
     description: '설명을 입력해주세요.'

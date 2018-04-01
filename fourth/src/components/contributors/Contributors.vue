@@ -35,8 +35,7 @@ export default {
       participantSponsors,
       regularParticipants,
       focused: false,
-      intervalIds: [],
-      assignedPositions: {}
+      intervalIds: []
     }
   },
   components: {
@@ -70,10 +69,7 @@ export default {
     injection (el) {
       const self = this
       var intervalId = setInterval(function () {
-        const moveOn = self.moveOn(el)
-        if (typeof self.assignedPositions[el.getAttribute('data-id')] === 'undefined') {
-          self.assignedPositions[el.getAttribute('data-id')] = moveOn
-        }
+        self.moveOn(el)
       }, Math.floor(Math.random() * (800 - 500 + 1) + 500))
 
       this.intervalIds[el.getAttribute('data-id')] = intervalId
@@ -168,7 +164,6 @@ export default {
     moveOn (el) {
       const scopeOfActivity = this.assignPosition(el)
       el.setAttribute('arithmetics', (el.getAttribute('arithmetics') === 'minus') ? 'plus' : 'minus')
-
       return scopeOfActivity
     },
     lightUp (nodes) {
@@ -347,3 +342,4 @@ export default {
     }
   }
 </style>
+

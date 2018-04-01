@@ -1,34 +1,61 @@
 <template lang="html">
-  <el-footer>
-    <el-dropdown split-button type="primary" @command="handleCommand">
-      이전 밋업 보기
-      <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item command="third">3회</el-dropdown-item>
-        <el-dropdown-item command="second">2회</el-dropdown-item>
-        <el-dropdown-item commane="first">1회</el-dropdown-item>
-      </el-dropdown-menu>
-    </el-dropdown>
-    <el-container>
-      <ul class="sns">
-        <li>
-          <a href="https://www.facebook.com/groups/vuejs.korea" target="_blank"><i class="fab fa-facebook"></i></a>
-        </li>
-        <li>
-          <a href="https://vuejs-korea.herokuapp.com" target="_blank"><i class="fab fa-slack"></i></a>
-        </li>
-        <li>
-          <a href="https://github.com/vuejs-kr" target="_blank"><i class="fab fa-github"></i></a>
-        </li>
-      </ul>
-    </el-container>
-    <el-container class="copyright">
-      <p class="text">©2018 Vuetiful Korea. All rights reserved.</p>
-    </el-container>
+  <el-footer height="100%">
+    <el-row class="container-top" :gutter="5" type="flex" style="flex-wrap: wrap;" justify="center">
+      <el-col :xs="18" :sm="6" :lg="6">
+        <el-container direction="vertical">
+          <div class="head">
+            <h2>ABOUT US</h2>
+          </div>
+          <div class="intro">
+            <h4>{{ generalInfo.intro }}</h4>
+          </div>
+        </el-container>
+      </el-col>
+      <el-col :xs="20" :sm="6" :lg="6">
+        <el-container direction="vertical">
+          <div class="head">
+            <h2>PREVIOUS MEETUP</h2>
+          </div>
+          <ul class="meetups">
+            <li><a href="">Vuetiful #1</a></li>
+            <li><a href="">Vuetiful #2</a></li>
+            <li><a href="">Vuetiful #3</a></li>
+          </ul>
+        </el-container>
+      </el-col>
+      <el-col :xs="20" :sm="6" :lg="6">
+        <el-container direction="vertical">
+          <div class="head">
+            <h2>CONTACT US</h2>
+          </div>
+          <ul class="sns">
+            <li>
+              <a href="https://www.facebook.com/groups/vuejs.korea" target="_blank"><i class="fab fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href="https://vuejs-korea.herokuapp.com" target="_blank"><i class="fab fa-slack"></i></a>
+            </li>
+            <li>
+              <a href="https://github.com/vuejs-kr" target="_blank"><i class="fab fa-github"></i></a>
+            </li>
+          </ul>
+        </el-container>
+      </el-col>
+    </el-row>
+    <el-row class="bottom-line" :gutter="5" type="flex" style="flex-wrap: wrap;" justify="center">
+      <p class="copyright">©2018 Vuetiful Korea. All rights reserved.</p>
+    </el-row>
   </el-footer>
 </template>
 
 <script>
+import { generalInfo } from '@/store/store'
 export default {
+  data () {
+    return {
+      generalInfo
+    }
+  },
   methods: {
     handleCommand (command) {
       console.log(command)
@@ -39,32 +66,68 @@ export default {
 </script>
 
 <style lang="css" scoped>
-  .el-dropdown-link {
-    cursor: pointer;
-    color: #409EFF;
+  .el-footer {
+    background-color: #444;
+    text-align: center;
+    padding: 75px 0 0;
+    color: white;
   }
-  .el-icon-arrow-down {
+
+  .container-top {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .el-col {
+    margin-bottom: 36px;
+  }
+
+  .head {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .head::after {
+    width: 2rem;
+    border-top: solid 1px;
+    display: inline-block;
+    content: "";
+  }
+
+  .content {
+    line-height: 20px;
+  }
+
+  .intro {
+    line-height: 15px;
     font-size: 12px;
   }
 
-  .el-footer {
-    height: 200px !important;
-    background-color: #444;
-    text-align: center;
-    padding: 0px;
+  .meetups a {
+    text-decoration: none;
+    font-size: 0.8em;
+    line-height: 1.2;
+    color: white;
+  }
+
+  .sns li {
+    display: inline;
+    margin-right: 4px;
+  }
+  .sns li:last-child {
+    margin-right: 0;
+  }
+  .sns a {
+    color: white;
   }
 
   .copyright {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 45px;
-    background-color: #333;
-    border-top: solid 1px #555;
-  }
-
-  .copyright .text {
+    font-size: 0.7em;
     color: white;
-    margin: auto;
+    line-height: 50px;
+  }
+  .bottom-line {
+    width: 100%;
+    background: #333;
   }
 </style>
