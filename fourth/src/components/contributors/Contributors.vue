@@ -260,11 +260,12 @@ export default {
 
     .container-sponsor {
       position: relative;
-      z-index: 9;
+      width: 400px;
+      z-index: 11;
+      margin: auto;
     }
     .container-sponsor > .sponsors {
-      z-index: 9;
-      width: 100%;
+      width: 400px;
       position: relative;
 
       img {
