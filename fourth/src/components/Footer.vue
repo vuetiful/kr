@@ -1,7 +1,7 @@
 <template lang="html">
   <el-footer height="100%">
     <el-row class="container" :gutter="5" type="flex" style="flex-wrap: wrap;" justify="center">
-      <el-col :xs="20" :sm="6" :lg="6">
+      <el-col :xs="18" :sm="6" :lg="6">
         <el-container direction="vertical">
           <div class="head">
             <h2>ABOUT US</h2>
