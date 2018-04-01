@@ -113,7 +113,7 @@ export const volunteers = [
     imgUrl: 'http://placehold.it/50x50',
     backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
     name: '양성민',
-    description: '설명을 입력해주세요.'
+    description: '조금 큰 사진요정'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
