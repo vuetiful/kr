@@ -1,26 +1,41 @@
 <template lang="html">
   <el-footer>
-    <el-dropdown split-button type="primary" @command="handleCommand">
-      이전 밋업 보기
-      <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item command="third">3회</el-dropdown-item>
-        <el-dropdown-item command="second">2회</el-dropdown-item>
-        <el-dropdown-item commane="first">1회</el-dropdown-item>
-      </el-dropdown-menu>
-    </el-dropdown>
-    <el-container>
-      <ul class="sns">
-        <li>
-          <a href="https://www.facebook.com/groups/vuejs.korea" target="_blank"><i class="fab fa-facebook"></i></a>
-        </li>
-        <li>
-          <a href="https://vuejs-korea.herokuapp.com" target="_blank"><i class="fab fa-slack"></i></a>
-        </li>
-        <li>
-          <a href="https://github.com/vuejs-kr" target="_blank"><i class="fab fa-github"></i></a>
-        </li>
-      </ul>
-    </el-container>
+    <el-row class="container">
+      <el-col :span="6" :offset="3">
+        <el-container direction="vertical">
+          <div class="head">
+            <h2>ABOUT US</h2>
+          </div>
+          <div class="intro">
+            <h4>{{ generalInfo.intro }}</h4>
+          </div>
+        </el-container>
+      </el-col>
+      <el-col :span="6">
+        <el-container direction="vertical">
+          <div class="head">
+            <h2>PREVIOUS MEETUP</h2>
+          </div>
+          <div class="content">
+            <h4>Veutiful #1</h4>
+            <h4>Veutiful #2</h4>
+            <h4>Veutiful #3</h4>
+          </div>
+        </el-container>
+      </el-col>
+      <el-col :span="6" >
+        <el-container direction="vertical">
+          <div class="head">
+            <h2>CONTACT US</h2>
+          </div>
+          <div class="content">
+            <a href="https://www.facebook.com/groups/vuejs.korea" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://vuejs-korea.herokuapp.com" target="_blank"><i class="fab fa-slack"></i></a>
+            <a href="https://github.com/vuejs-kr" target="_blank"><i class="fab fa-github"></i></a>
+          </div>
+        </el-container>
+      </el-col>
+    </el-row>
     <el-container class="copyright">
       <p class="text">©2018 Vuetiful Korea. All rights reserved.</p>
     </el-container>
@@ -28,7 +43,14 @@
 </template>
 
 <script>
+import { generalInfo } from '@/store/store'
+
 export default {
+  data () {
+    return {
+      generalInfo
+    }
+  },
   methods: {
     handleCommand (command) {
       console.log(command)
@@ -39,19 +61,33 @@ export default {
 </script>
 
 <style lang="css" scoped>
-  .el-dropdown-link {
-    cursor: pointer;
-    color: #409EFF;
-  }
-  .el-icon-arrow-down {
-    font-size: 12px;
-  }
-
   .el-footer {
-    height: 200px !important;
+    height: 270px !important;
     background-color: #444;
     text-align: center;
-    padding: 0px;
+    padding: 50px 0 0 0 ;
+    color: white;
+  }
+
+  .container .head {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .container .head::after {
+    width: 5rem;
+    border-top: solid 1px;
+    display: inline-block;
+    content: "";
+  }
+
+  .container .content {
+    line-height: 20px;
+  }
+
+  .container .intro {
+    line-height: 15px;
+    font-size: 12px;
   }
 
   .copyright {
