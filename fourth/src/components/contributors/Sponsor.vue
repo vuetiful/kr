@@ -1,6 +1,6 @@
 <template lang="html">
   <el-container>
-    <a :href="sponsor.pageUrl">
+    <a :href="sponsor.pageUrl" target="_blank">
       <img :src="sponsor.imgUrl" :alt="'후원사' + sponsor.name">
     </a>
     <h3 class="heading">

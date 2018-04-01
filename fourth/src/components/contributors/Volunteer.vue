@@ -34,7 +34,6 @@ export default {
     opacity: 1;
   }
   .el-tooltip {
-    bottom: -35px;
     position: absolute;
     width: 100%;
     background-color: @focus-color;

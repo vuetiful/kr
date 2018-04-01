@@ -56,9 +56,26 @@ export default {
       }, Math.floor(Math.random() * (800 - 500 + 1) + 500))
 
       this.intervalIds[el.getAttribute('data-id')] = intervalId
+      setTimeout(function () {
+        self.painting(el)
+      }, 800)
     },
     painting (el) {
-      el.style.opacity = 0.6
+      var widths = [
+        40,
+        50,
+        60,
+        70,
+        80
+      ]
+      const maxWidth = widths[Math.floor(Math.random() * widths.length)]
+      el.style.display = 'block'
+
+      for (var i = 0; i <= maxWidth; i++) {
+        setTimeout(function () {
+          el.style.width = i.toString() + 'px'
+        }, 20)
+      }
     },
     moveOn (el) {
       const minimumScopeOfActivityX = parseInt(document.querySelector('.container-volunteers').offsetHeight)
@@ -81,6 +98,30 @@ export default {
       el.setAttribute('arithmetics', (el.getAttribute('arithmetics') === 'minus') ? 'plus' : 'minus')
       el.style.transform = 'matrix3d(1, 1.74533e-06, 0, 0, -1.74533e-06, 1, 0, 0, 0, 0, 1, 0, ' + scopeOfActivityY + ', ' + scopeOfActivityX + ', 0, 1)'
     },
+    lightUp (nodes) {
+      for (var i = 0; i < nodes.length; i++) {
+        var node = nodes[i]
+        var radius = 0
+        var interval = window.setInterval(function () {
+          node.style.webkitMask = '-webkit-gradient(radial, 17 17, ' + radius + ', 17 17, ' + (radius + 15) + ', from(rgb(0, 0, 0)), color-stop(0.5, rgba(0, 0, 0, 0.2)), to(rgb(0, 0, 0)))'
+          radius++
+          if (node.offsetWidth === radius) {
+            window.clearInterval(interval)
+          }
+        }, 10)
+      }
+    },
+    checkVisible (elm, threshold, mode) {
+      threshold = threshold || 0
+      mode = mode || 'visible'
+
+      var rect = elm.getBoundingClientRect()
+      var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight)
+      var above = rect.bottom - threshold < 0
+      var below = rect.top - viewHeight + threshold >= 0
+
+      return mode === 'above' ? above : (mode === 'below' ? below : !above && !below)
+    },
     focusOnVolunteer (volunteer, event) {
       this.focused = true
       event.currentTarget.style.opacity = 1
@@ -95,7 +136,21 @@ export default {
     }
   },
   mounted () {
-    this.spreadOut()
+    const self = this
+    const contributorsElm = document.getElementById('contributors')
+    const scrollDist = parseInt(contributorsElm.offsetHeight)
+    const ExtraDist = (document.getElementById('program').offsetHeight / 3)
+    const scrollMode = 'above'
+    var alreadySeen = false
+
+    window.onscroll = function () {
+      if (self.checkVisible(contributorsElm, (scrollDist + ExtraDist), scrollMode) && !alreadySeen) {
+        console.log('gogo')
+        alreadySeen = true
+        self.spreadOut()
+        self.lightUp(document.querySelectorAll('.container-sponsor img'))
+      }
+    }
   }
 }
 </script>
@@ -109,7 +164,7 @@ export default {
       z-index:99;
     }
     .container-volunteers > .el-container > a {
-      opacity: 0.1;
+      opacity: 0.3;
     }
   }
 
@@ -122,7 +177,7 @@ export default {
     > h2 {
       font-size: 18px;
       font-weight: 800;
-      color: #fff;
+      color: #111;
       z-index: 9;
       margin-top: 15px;
     }
@@ -159,8 +214,8 @@ export default {
         display: inline-block;
       }
 
-      > .el-col > .el-container h3{
-        color: #fff;
+      > .el-col > .el-container h3 {
+        color: #111;
         font-weight: bold;
         margin-top: 8px;
       }
@@ -171,26 +226,32 @@ export default {
       z-index : 10;
 
       > .el-container {
+        display: none;
+        width: 20px;
         position : absolute;
         opacity: .6;
-        transition: opacity 300ms;
+        transition: 300ms linear;
 
         a {
+          display: block;
           position : relative;
           border: 2px solid #222;
           border-radius: 50%;
         }
         > a > img {
+          width: 100%;
           border-radius: 50%;
         }
         .name {
           position: absolute;
-          top: 0;
+          top: 50%;
           width: 100%;
           left: 0;
           text-align: center;
-          top: 45px;
           color: #fff;
+          font-size: 80%;
+          font-weight: 800;
+          transform: translateY(-50%);
         }
       }
     }
