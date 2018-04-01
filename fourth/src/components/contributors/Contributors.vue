@@ -35,7 +35,8 @@ export default {
       participantSponsors,
       regularParticipants,
       focused: false,
-      intervalIds: []
+      intervalIds: [],
+      assignedPositions: {}
     }
   },
   components: {
@@ -51,7 +52,10 @@ export default {
     injection (el) {
       const self = this
       var intervalId = setInterval(function () {
-        self.moveOn(el)
+        const moveOn = self.moveOn(el)
+        if (typeof self.assignedPositions[el.getAttribute('data-id')] === 'undefined') {
+          self.assignedPositions[el.getAttribute('data-id')] = moveOn
+        }
       }, Math.floor(Math.random() * (800 - 500 + 1) + 500))
 
       this.intervalIds[el.getAttribute('data-id')] = intervalId
@@ -59,12 +63,16 @@ export default {
         self.painting(el)
       }, 800)
     },
+    assignPosition (el) {
+
+    },
     painting (el) {
       var widths = [
-        40,
-        50,
+        55,
         60,
+        65,
         70,
+        75,
         80
       ]
       const maxWidth = widths[Math.floor(Math.random() * widths.length)]
@@ -73,12 +81,14 @@ export default {
       for (var i = 0; i <= maxWidth; i++) {
         setTimeout(function () {
           el.style.width = i.toString() + 'px'
-        }, 20)
+        }, 10)
       }
     },
     moveOn (el) {
-      const minimumScopeOfActivityX = parseInt(document.querySelector('.container-volunteers').offsetHeight)
-      const maximumScopeOfActivityY = parseInt(document.querySelector('.container-volunteers').offsetWidth)
+      const minimumScopeOfActivityX = parseInt(document.querySelector('.container-volunteers').offsetHeight) - 100
+      const maximumScopeOfActivityY = parseInt(document.querySelector('.container-volunteers').offsetWidth) - 100
+      const maxScopeX = 15
+      const maxScopeY = 15
 
       var scopeOfActivityX = Math.floor(Math.random() * minimumScopeOfActivityX - 0 + 1) + 0
       var scopeOfActivityY = Math.floor(Math.random() * maximumScopeOfActivityY - 0 + 1) + 0
@@ -92,10 +102,20 @@ export default {
 
         scopeOfActivityX = (currentScopeOfActivityX < minimumScopeOfActivityX) ? ((el.getAttribute('arithmetics') === 'plus') ? currentScopeOfActivityX - jumpToX : currentScopeOfActivityX + jumpToX) : (currentScopeOfActivityX - jumpToX)
         scopeOfActivityY = (currentScopeOfActivityY < maximumScopeOfActivityY) ? ((el.getAttribute('arithmetics') === 'plus') ? currentScopeOfActivityY - jumpToY : currentScopeOfActivityY + jumpToY) : (currentScopeOfActivityY - jumpToY)
+
+        if (typeof this.assignedPositions[el.getAttribute('data-id')] !== 'undefined' && (this.assignedPositions[el.getAttribute('data-id')][0] + maxScopeX) <= scopeOfActivityX) {
+          scopeOfActivityX = this.assignedPositions[el.getAttribute('data-id')][0]
+        }
+
+        if (typeof this.assignedPositions[el.getAttribute('data-id')] !== 'undefined' && (this.assignedPositions[el.getAttribute('data-id')][1] + maxScopeY) <= currentScopeOfActivityY) {
+          scopeOfActivityY = this.assignedPositions[el.getAttribute('data-id')][1]
+        }
       }
 
       el.setAttribute('arithmetics', (el.getAttribute('arithmetics') === 'minus') ? 'plus' : 'minus')
       el.style.transform = 'matrix3d(1, 1.74533e-06, 0, 0, -1.74533e-06, 1, 0, 0, 0, 0, 1, 0, ' + scopeOfActivityY + ', ' + scopeOfActivityX + ', 0, 1)'
+
+      return [scopeOfActivityX, scopeOfActivityY]
     },
     lightUp (nodes) {
       for (var i = 0; i < nodes.length; i++) {
@@ -192,9 +212,14 @@ export default {
       background-size: cover;
     }
 
+    .container-sponsor {
+      position: relative;
+      z-index: 9;
+    }
     .container-sponsor > .sponsors {
-      z-index: 15;
+      z-index: 9;
       width: 100%;
+      position: relative;
 
       img {
         max-width : 100%;
@@ -209,15 +234,19 @@ export default {
       }
 
       > .el-col > .el-container h3{
-        color: #fff;
         font-weight: bold;
         margin-top: 8px;
+        color: #111;
+        text-decoration: underline;
       }
     }
 
     .container-volunteers {
       position : absolute;
       z-index : 10;
+      width:100%;
+      height:100%;
+      display: block;
 
       > .el-container {
         display: none;
