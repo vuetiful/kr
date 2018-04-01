@@ -3,7 +3,7 @@
     <div id="dim-of-contributors"></div>
     <el-container class="container-sponsor">
       <el-row class="sponsors" type="flex" justify="center">
-        <el-col :xs="8" :sm="5" :lg="4" v-for="sponsor in sponsors" :key="sponsor.name">
+        <el-col :xs="10" :sm="12" :lg="12" v-for="sponsor in sponsors" :key="sponsor.name">
           <sponsor :sponsor="sponsor"></sponsor>
         </el-col>
       </el-row>
@@ -265,9 +265,15 @@ export default {
     }
     .container-sponsor > .sponsors {
       position: relative;
+      max-width: 400px;
+
+      a {
+        border-radius: 50%;
+      }
 
       img {
         max-width: 100%;
+
       }
 
       > .el-col > .el-container h3{
