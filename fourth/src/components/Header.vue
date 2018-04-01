@@ -9,7 +9,7 @@
           <el-menu :default-active="activeIndex" mode="horizontal" @select="handleSelect">
             <el-menu-item index="1"><a href="#presenters">발표자</a></el-menu-item>
             <el-menu-item index="2"><a href="#program">프로그램</a></el-menu-item>
-            <el-menu-item index="3"><a href="#directions">찾아오는 길</a></el-menu-item>
+            <el-menu-item index="3"><a href="#directions">오시는 길</a></el-menu-item>
           </el-menu>
         </el-container>
       </el-container>
