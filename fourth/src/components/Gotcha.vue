@@ -5,7 +5,7 @@
     </el-carousel>
     <div class="bg-dot"></div>
     <div class="center" :class="{ laptop, desktop }">
-      <img src="~@/assets/logo.png" :alt="generalInfo.intro" :title="generalInfo.intro" class="logo" :class="{ laptop, desktop }">
+      <img src="~@/assets/logo.png" alt="뷰티풀 코리아" class="logo" :class="{ laptop, desktop }">
       <div class="info" :class="{ laptop, desktop }">
         <p class="date">{{ generalInfo.date }}<br v-if="mobile || smartphone"><span class="time"> {{ generalInfo.time}}</span></p>
         <p class="location">{{ generalInfo.location }}</p>
