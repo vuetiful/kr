@@ -1,6 +1,6 @@
 <template lang="html">
   <el-footer height="100%">
-    <el-row class="container-top" :gutter="5" type="flex" style="flex-wrap: wrap;" justify="center">
+    <el-row class="container-top" type="flex" style="flex-wrap: wrap;" justify="center">
       <el-col :xs="18" :sm="6" :lg="6">
         <el-container direction="vertical">
           <div class="head">
@@ -17,9 +17,7 @@
             <h2>PREVIOUS MEETUP</h2>
           </div>
           <ul class="meetups">
-            <li><a href="">Vuetiful #1</a></li>
-            <li><a href="">Vuetiful #2</a></li>
-            <li><a href="">Vuetiful #3</a></li>
+            <li v-for="meetup in prevMeetups" :key="meetup.name"><a :href="meetup.pageUrl">{{ meetup.name}}</a></li>
           </ul>
         </el-container>
       </el-col>
@@ -29,31 +27,27 @@
             <h2>CONTACT US</h2>
           </div>
           <ul class="sns">
-            <li>
-              <a href="https://www.facebook.com/groups/vuejs.korea" target="_blank"><i class="fab fa-facebook"></i></a>
-            </li>
-            <li>
-              <a href="https://vuejs-korea.herokuapp.com" target="_blank"><i class="fab fa-slack"></i></a>
-            </li>
-            <li>
-              <a href="https://github.com/vuejs-kr" target="_blank"><i class="fab fa-github"></i></a>
+            <li v-for="media in sns" :key="media.name">
+              <a :href="media.pageUrl" target="_blank"><i :class="media.faClass"></i></a>
             </li>
           </ul>
         </el-container>
       </el-col>
     </el-row>
-    <el-row class="bottom-line" :gutter="5" type="flex" style="flex-wrap: wrap;" justify="center">
+    <el-row class="bottom-line" type="flex" style="flex-wrap: wrap;" justify="center">
       <p class="copyright">©2018 Vuetiful Korea. All rights reserved.</p>
     </el-row>
   </el-footer>
 </template>
 
 <script>
-import { generalInfo } from '@/store/store'
+import { generalInfo, prevMeetups, sns } from '@/store/store'
 export default {
   data () {
     return {
-      generalInfo
+      generalInfo,
+      prevMeetups,
+      sns
     }
   },
   methods: {
@@ -101,13 +95,20 @@ export default {
   .intro {
     line-height: 15px;
     font-size: 12px;
+    color: #ccc;
+  }
+  a {
+    color: #ccc;
+    transition: all 0.2;
+  }
+  a:hover {
+    color: white;
   }
 
   .meetups a {
     text-decoration: none;
     font-size: 0.8em;
     line-height: 1.2;
-    color: white;
   }
 
   .sns li {
@@ -116,9 +117,6 @@ export default {
   }
   .sns li:last-child {
     margin-right: 0;
-  }
-  .sns a {
-    color: white;
   }
 
   .copyright {
