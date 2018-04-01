@@ -37,10 +37,12 @@ export default {
     bottom: -35px;
     position: absolute;
     width: 100%;
+    font-size: 0.8em;
+    line-height: 1.2;
     background-color: @focus-color;
     color: #fff;
     text-align: center;
-    padding: 5px 0;
+    padding: 6px 10px;
     border-radius: 6px;
     z-index: 1;
     opacity: 0;
