@@ -96,7 +96,7 @@ export const sponsors = [
 export const volunteers = [
   {
     pageUrl: 'http://github.com/vuetiful',
-    imgUrl: 'http://placehold.it/50x50',
+    imgUrl: '/static/img/volunteers/profile/smilee.jpg',
     backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
     name: '이승민',
     description: '설명을 입력해주세요.'
@@ -111,7 +111,7 @@ export const volunteers = [
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: 'http://placehold.it/50x50',
-    backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
+    backgroundImageUrl: '/static/img/volunteers/profile/chris.jpg',
     name: '양성민',
     description: '조금 큰 사진요정'
   },
