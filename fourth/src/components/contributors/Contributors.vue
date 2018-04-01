@@ -49,6 +49,24 @@ export default {
         this.injection(document.querySelectorAll('.container-volunteers > *')[i])
       }
     },
+    removeVolunteers () {
+      const self = this
+      return new Promise(function (resolve, reject) {
+        self.focused = false
+        for (var i = 0; i < Object.keys(self.intervalIds).length; i++) {
+          const key = Object.keys(self.intervalIds)[i]
+          document.querySelector('.container-volunteers > *[data-id=' + key + ']').style.display = 'none'
+          document.querySelector('.container-volunteers > *[data-id=' + key + ']').style.transform = null
+
+          clearInterval(self.intervalIds[key])
+          if ((i + 1) === Object.keys(self.intervalIds).length) {
+            self.intervalIds = []
+            self.assignedPositions = {}
+            resolve(true)
+          }
+        }
+      })
+    },
     injection (el) {
       const self = this
       var intervalId = setInterval(function () {
@@ -63,13 +81,76 @@ export default {
         self.painting(el)
       }, 800)
     },
-    assignPosition (el) {
+    getAbleScopeOfActivity (maximumScopeOfActivityX, maximumScopeOfActivityY) {
+      const sponsorFirstRect = document.querySelectorAll('.container-sponsor > * img')[0].getBoundingClientRect()
+      const sponsorLastRect = document.querySelectorAll('.container-sponsor > * img')[1].getBoundingClientRect()
+      const sponsorExtraSpace = 120
+      const volunteerExtraSpace = 100
 
+      var x = (maximumScopeOfActivityX / Object.keys(this.volunteers).length) * Object.keys(this.assignedPositions).length
+      var y = Math.floor(Math.random() * (maximumScopeOfActivityY - 100 + 1) + 100)
+
+      if (x >= (sponsorFirstRect.x -  sponsorExtraSpace) && x <= (sponsorLastRect.x + sponsorExtraSpace)) {
+        x = Math.floor(Math.random() * (500 - 300 + 1) + 300) + (((x - (sponsorFirstRect.x -  sponsorExtraSpace)) <= (x - (sponsorLastRect.x + sponsorExtraSpace))) ? x + (x - (sponsorFirstRect.x -  sponsorExtraSpace)) : x - (x - (sponsorLastRect.x + sponsorExtraSpace)))
+      }
+
+      var trespassOnX = false;
+      var trespassOnY = false;
+
+      for (var i = 0; i < Object.keys(this.assignedPositions).length; i++) {
+        const assignedPosition = this.assignedPositions[Object.keys(this.assignedPositions)[i]]
+        if (x >= assignedPosition[0] && x <= (assignedPosition[0] + volunteerExtraSpace)) {
+          trespassOnX = true;
+        }
+        if (y >= assignedPosition[1] && y <= (assignedPosition[1] + volunteerExtraSpace)) {
+          trespassOnY = true;
+        }
+      }
+
+      var moveTo = Math.floor(Math.random() * (200 - 100 + 1) + 100)
+
+      x = ( trespassOnX ) ? ((maximumScopeOfActivityX <= (x+volunteerExtraSpace))? (x-moveTo) : (x+moveTo)) : x;
+      y = ( trespassOnX ) ? ((maximumScopeOfActivityY <= (y+volunteerExtraSpace))? (y-moveTo) : (y+moveTo)) : y;
+
+      return [
+        x,
+        y
+      ]
+    },
+    assignPosition (el) {
+      const maximumScopeOfActivityX = parseInt(document.querySelector('.container-volunteers').offsetWidth) - 100
+      const maximumScopeOfActivityY = parseInt(document.querySelector('.container-volunteers').offsetHeight) - 100
+
+      const maxScopeX = 15
+      const maxScopeY = 15
+
+      const ableScope = this.getAbleScopeOfActivity(maximumScopeOfActivityX, maximumScopeOfActivityY)
+      var scopeOfActivityX = ableScope[0]
+      var scopeOfActivityY = ableScope[1]
+
+      if (getComputedStyle(el)['transform'] !== 'none' && getComputedStyle(el)['transform'] != null) {
+        var currentScopeOfActivityX = parseInt(/\(\s*([^)]+?)\s*\)/.exec(getComputedStyle(el)['transform'])[0].split(/\s*,\s*/)[4].replace(/\)/g, '')) + 1
+        var currentScopeOfActivityY = parseInt(/\(\s*([^)]+?)\s*\)/.exec(getComputedStyle(el)['transform'])[0].split(/\s*,\s*/)[5]) + 1
+
+        var jumpToX = Math.floor(Math.random() * (2 - 1 + 1) + 1)
+        var jumpToY = Math.floor(Math.random() * (2 - 1 + 1) + 1)
+
+        scopeOfActivityX = (currentScopeOfActivityX < maximumScopeOfActivityX) ? ((el.getAttribute('arithmetics') === 'plus') ? currentScopeOfActivityX - jumpToX : currentScopeOfActivityX + jumpToX) : (currentScopeOfActivityX - jumpToX)
+        scopeOfActivityY = (currentScopeOfActivityY < maximumScopeOfActivityY) ? ((el.getAttribute('arithmetics') === 'plus') ? currentScopeOfActivityY - jumpToY : currentScopeOfActivityY + jumpToY) : (currentScopeOfActivityY - jumpToY)
+
+        if (typeof this.assignedPositions[el.getAttribute('data-id')] !== 'undefined' && (this.assignedPositions[el.getAttribute('data-id')][0] + maxScopeX) <= scopeOfActivityX) {
+          scopeOfActivityX = this.assignedPositions[el.getAttribute('data-id')][0]
+        }
+
+        if (typeof this.assignedPositions[el.getAttribute('data-id')] !== 'undefined' && (this.assignedPositions[el.getAttribute('data-id')][1] + maxScopeY) <= scopeOfActivityY) {
+          scopeOfActivityY = this.assignedPositions[el.getAttribute('data-id')][1]
+        }
+      }
+      el.style.transform = 'matrix3d(1, 1.74533e-06, 0, 0, -1.74533e-06, 1, 0, 0, 0, 0, 1, 0, ' + scopeOfActivityX + ', ' + scopeOfActivityY + ', 0, 1)'
+      return [scopeOfActivityX, scopeOfActivityY]
     },
     painting (el) {
       var widths = [
-        55,
-        60,
         65,
         70,
         75,
@@ -85,37 +166,10 @@ export default {
       }
     },
     moveOn (el) {
-      const minimumScopeOfActivityX = parseInt(document.querySelector('.container-volunteers').offsetHeight) - 100
-      const maximumScopeOfActivityY = parseInt(document.querySelector('.container-volunteers').offsetWidth) - 100
-      const maxScopeX = 15
-      const maxScopeY = 15
-
-      var scopeOfActivityX = Math.floor(Math.random() * minimumScopeOfActivityX - 0 + 1) + 0
-      var scopeOfActivityY = Math.floor(Math.random() * maximumScopeOfActivityY - 0 + 1) + 0
-
-      if (getComputedStyle(el)['transform'] !== 'none' && getComputedStyle(el)['transform'] != null) {
-        var currentScopeOfActivityX = parseInt(/\(\s*([^)]+?)\s*\)/.exec(getComputedStyle(el)['transform'])[0].split(/\s*,\s*/)[5].replace(/\)/g, '')) + 1
-        var currentScopeOfActivityY = parseInt(/\(\s*([^)]+?)\s*\)/.exec(getComputedStyle(el)['transform'])[0].split(/\s*,\s*/)[4]) + 1
-
-        var jumpToX = Math.floor(Math.random() * (2 - 1 + 1) + 1)
-        var jumpToY = Math.floor(Math.random() * (2 - 1 + 1) + 1)
-
-        scopeOfActivityX = (currentScopeOfActivityX < minimumScopeOfActivityX) ? ((el.getAttribute('arithmetics') === 'plus') ? currentScopeOfActivityX - jumpToX : currentScopeOfActivityX + jumpToX) : (currentScopeOfActivityX - jumpToX)
-        scopeOfActivityY = (currentScopeOfActivityY < maximumScopeOfActivityY) ? ((el.getAttribute('arithmetics') === 'plus') ? currentScopeOfActivityY - jumpToY : currentScopeOfActivityY + jumpToY) : (currentScopeOfActivityY - jumpToY)
-
-        if (typeof this.assignedPositions[el.getAttribute('data-id')] !== 'undefined' && (this.assignedPositions[el.getAttribute('data-id')][0] + maxScopeX) <= scopeOfActivityX) {
-          scopeOfActivityX = this.assignedPositions[el.getAttribute('data-id')][0]
-        }
-
-        if (typeof this.assignedPositions[el.getAttribute('data-id')] !== 'undefined' && (this.assignedPositions[el.getAttribute('data-id')][1] + maxScopeY) <= currentScopeOfActivityY) {
-          scopeOfActivityY = this.assignedPositions[el.getAttribute('data-id')][1]
-        }
-      }
-
+      const scopeOfActivity = this.assignPosition(el)
       el.setAttribute('arithmetics', (el.getAttribute('arithmetics') === 'minus') ? 'plus' : 'minus')
-      el.style.transform = 'matrix3d(1, 1.74533e-06, 0, 0, -1.74533e-06, 1, 0, 0, 0, 0, 1, 0, ' + scopeOfActivityY + ', ' + scopeOfActivityX + ', 0, 1)'
 
-      return [scopeOfActivityX, scopeOfActivityY]
+      return scopeOfActivity
     },
     lightUp (nodes) {
       for (var i = 0; i < nodes.length; i++) {
@@ -164,11 +218,16 @@ export default {
 
     window.onscroll = function () {
       if (self.checkVisible(contributorsElm, (scrollDist + ExtraDist), scrollMode) && !alreadySeen) {
-        console.log('gogo')
         alreadySeen = true
         self.spreadOut()
         self.lightUp(document.querySelectorAll('.container-sponsor img'))
       }
+    }
+
+    window.onresize = function () {
+      self.removeVolunteers().then(function () {
+        self.spreadOut()
+      })
     }
   }
 }
