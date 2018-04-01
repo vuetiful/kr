@@ -1,40 +1,49 @@
 <template lang="html">
-  <el-footer>
-    <el-row class="about" :gutter="5" type="flex" style="flex-wrap: wrap;" justify="center">
-      <el-col :xs="20" :sm="2" :lg="2" v-show="!mobile && !smartphone && !tablet">
-        <img src="~@/assets/logo-gs.png" alt="뷰티풀 코리아">
+  <el-footer height="100%">
+    <el-row class="container" :gutter="5" type="flex" style="flex-wrap: wrap;" justify="center">
+      <el-col :xs="20" :sm="6" :lg="6">
+        <el-container direction="vertical">
+          <div class="head">
+            <h2>ABOUT US</h2>
+          </div>
+          <div class="intro">
+            <h4>{{ generalInfo.intro }}</h4>
+          </div>
+        </el-container>
       </el-col>
-      <el-col :xs="18" :sm="10" :lg="7" v-show="!mobile && !smartphone && !tablet">
-        <p class="intro">{{ generalInfo.intro }}</p>
+      <el-col :xs="20" :sm="6" :lg="6">
+        <el-container direction="vertical">
+          <div class="head">
+            <h2>PREVIOUS MEETUP</h2>
+          </div>
+          <ul class="meetups">
+            <li><a href="">Vuetiful #1</a></li>
+            <li><a href="">Vuetiful #2</a></li>
+            <li><a href="">Vuetiful #3</a></li>
+          </ul>
+        </el-container>
       </el-col>
-      <el-col :xs="20" :sm="5" :lg="3">
-        <el-dropdown split-button size="mini" @command="handleCommand">
-          이전 밋업 보기
-          <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item command="third">3회</el-dropdown-item>
-            <el-dropdown-item command="second">2회</el-dropdown-item>
-            <el-dropdown-item commane="first">1회</el-dropdown-item>
-          </el-dropdown-menu>
-        </el-dropdown>
+      <el-col :xs="20" :sm="6" :lg="6">
+        <el-container direction="vertical">
+          <div class="head">
+            <h2>CONTACT US</h2>
+          </div>
+          <ul class="sns">
+            <li>
+              <a href="https://www.facebook.com/groups/vuejs.korea" target="_blank"><i class="fab fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href="https://vuejs-korea.herokuapp.com" target="_blank"><i class="fab fa-slack"></i></a>
+            </li>
+            <li>
+              <a href="https://github.com/vuejs-kr" target="_blank"><i class="fab fa-github"></i></a>
+            </li>
+          </ul>
+        </el-container>
       </el-col>
     </el-row>
     <el-row class="bottom-line" :gutter="5" type="flex" style="flex-wrap: wrap;" justify="center">
-      <el-col :xs="20" :sm="20" :lg="5">
-        <p class="copyright">©2018 Vuetiful Korea. All rights reserved.</p>
-      </el-col>
-      <el-col :xs="20" :sm="20" :lg="2">
-        <ul class="sns">
-          <li>
-            <a href="https://www.facebook.com/groups/vuejs.korea" target="_blank"><i class="fab fa-facebook"></i></a>
-          </li>
-          <li>
-            <a href="https://vuejs-korea.herokuapp.com" target="_blank"><i class="fab fa-slack"></i></a>
-          </li>
-          <li>
-            <a href="https://github.com/vuejs-kr" target="_blank"><i class="fab fa-github"></i></a>
-          </li>
-        </ul>
-      </el-col>
+      <p class="copyright">©2018 Vuetiful Korea. All rights reserved.</p>
     </el-row>
   </el-footer>
 </template>
@@ -58,45 +67,61 @@ export default {
 
 <style lang="css" scoped>
   .el-footer {
-    min-height: 200px;
     background-color: #444;
     text-align: center;
     padding: 50px 0 0;
+    color: white;
   }
-  .about {
+
+  .el-col {
+    margin-bottom: 36px;
+  }
+
+  .head {
+    font-weight: bold;
     margin-bottom: 20px;
   }
-  img {
-    width: 60px;
+
+  .head::after {
+    width: 2rem;
+    border-top: solid 1px;
+    display: inline-block;
+    content: "";
   }
+
+  .content {
+    line-height: 20px;
+  }
+
   .intro {
-    font-size: 0.8em;
-    text-align: left;
-    line-height: 1.5;
-    color: white;
-  }
-  .el-dropdown-link {
-    cursor: pointer;
-    color: #409EFF;
-  }
-  .el-icon-arrow-down {
+    line-height: 15px;
     font-size: 12px;
   }
-  li {
-    display: inline;
-    margin-left: 4px;
-  }
-  a {
+
+  .meetups a {
+    text-decoration: none;
+    font-size: 0.8em;
+    line-height: 1.2;
     color: white;
-    line-height: 30px;
   }
-  .bottom-line {
-    height: 45px;
+
+  .sns li {
+    display: inline;
+    margin-right: 4px;
+  }
+  .sns li:last-child {
+    margin-right: 0;
+  }
+  .sns a {
+    color: white;
   }
 
   .copyright {
     font-size: 0.7em;
     color: white;
     line-height: 30px;
+  }
+  .bottom-line {
+    background: #333;
   }
 </style>
