@@ -27,7 +27,7 @@ export default {
   .container {
     position: fixed;
     right: 20px;
-    bottom: 50px;
+    bottom: 72px;
     z-index: 1000;
   }
 </style>
