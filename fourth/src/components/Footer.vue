@@ -1,6 +1,6 @@
 <template lang="html">
   <el-footer height="100%">
-    <el-row class="container" :gutter="5" type="flex" style="flex-wrap: wrap;" justify="center">
+    <el-row class="container-top" :gutter="5" type="flex" style="flex-wrap: wrap;" justify="center">
       <el-col :xs="18" :sm="6" :lg="6">
         <el-container direction="vertical">
           <div class="head">
@@ -73,6 +73,10 @@ export default {
     color: white;
   }
 
+  .container-top {
+    width: 100%;
+  }
+
   .el-col {
     margin-bottom: 36px;
   }
@@ -122,6 +126,7 @@ export default {
     line-height: 30px;
   }
   .bottom-line {
+    width: 100%;
     background: #333;
   }
 </style>
