@@ -2,26 +2,24 @@
   <el-container id="contributors" class="container" direction="vertical" v-bind:class="{ 'is-focused' : focused}">
     <h2 class="heading">Contributors</h2>
     <span class="subheading">도움의 손길</span>
-    <el-container class="container" direction="vertical">
-      <div id="dim-of-contributors"></div>
-      <el-container class="container-sponsor">
-        <el-row class="sponsors" :gutter="20" type="flex" style="flex-wrap: wrap;" justify="center">
-          <el-col :xs="16" :sm="7" :lg="5" v-for="sponsor in sponsors" :key="sponsor.name">
-            <sponsor :sponsor="sponsor"></sponsor>
-          </el-col>
-        </el-row>
-      </el-container>
-      <el-container class="container-volunteers">
-        <volunteer v-for="volunteer in volunteers" :volunteer="volunteer" :key="volunteer.name" :data-id="volunteer.name" @focusOnVolunteer="focusOnVolunteer" @unFocusOnVolunteer="unFocusOnVolunteer"></volunteer>
-      </el-container>
-      <p class="participants">
-        <span class="participant-sponsor" v-for="(participantSponsor, index) in participantSponsors" :key="index">
-          {{ participantSponsor }}
-          <span v-if="index != participantSponsors.length - 1">, </span>
-        </span>
-        외 {{ regularParticipants.length }}명의 기부천사
-      </p>
+    <div id="dim-of-contributors"></div>
+    <el-container class="container-sponsor">
+      <el-row class="sponsors" :gutter="20" type="flex" style="flex-wrap: wrap;" justify="center">
+        <el-col :xs="16" :sm="7" :lg="5" v-for="sponsor in sponsors" :key="sponsor.name">
+          <sponsor :sponsor="sponsor"></sponsor>
+        </el-col>
+      </el-row>
     </el-container>
+    <div class="container-volunteers">
+      <volunteer v-for="volunteer in volunteers" :volunteer="volunteer" :key="volunteer.name" :data-id="volunteer.name" @focusOnVolunteer="focusOnVolunteer" @unFocusOnVolunteer="unFocusOnVolunteer"></volunteer>
+    </div>
+    <p class="participants">
+      <span class="participant-sponsor" v-for="(participantSponsor, index) in participantSponsors" :key="index">
+        {{ participantSponsor }}
+        <span v-if="index != participantSponsors.length - 1">, </span>
+      </span>
+      외 {{ regularParticipants.length }}명의 기부천사
+    </p>
   </el-container>
 </template>
 
@@ -68,7 +66,7 @@ export default {
       var scopeOfActivityX = Math.floor(Math.random() * minimumScopeOfActivityX - 0 + 1) + 0
       var scopeOfActivityY = Math.floor(Math.random() * maximumScopeOfActivityY - 0 + 1) + 0
 
-      if (getComputedStyle(el)['transform'] !== 'none') {
+      if (getComputedStyle(el)['transform'] !== 'none' && getComputedStyle(el)['transform'] != null) {
         var currentScopeOfActivityX = parseInt(/\(\s*([^)]+?)\s*\)/.exec(getComputedStyle(el)['transform'])[0].split(/\s*,\s*/)[5].replace(/\)/g, '')) + 1
         var currentScopeOfActivityY = parseInt(/\(\s*([^)]+?)\s*\)/.exec(getComputedStyle(el)['transform'])[0].split(/\s*,\s*/)[4]) + 1
 
@@ -116,6 +114,9 @@ export default {
 
   #contributors {
     background-color: #fff;
+    width: 100%;
+    // height: 400px;
+    overflow:  hidden;
 
     // > h2 {
     //   font-size: 18px;
@@ -125,73 +126,67 @@ export default {
     //   z-index: 9;
     //   margin-top: 15px;
     // }
-    .container {
+    #dim-of-contributors {
+      position:absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height:100%;
+      width:100%;
+      background-size: cover;
+    }
+
+    .container-sponsor > .sponsors {
+      z-index: 15;
       width: 100%;
-      // height: 400px;
-      overflow:  hidden;
-      #dim-of-contributors {
-        position:absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        height:100%;
-        width:100%;
-        background-size: cover;
+
+      img {
+        max-width : 100%;
       }
 
-      .container-sponsor > .sponsors {
-        margin : 0;
-        z-index: 15;
-        width: 100%;
-
-        img {
-          max-width : 100%;
-        }
-
-        > .el-col > .el-container h3{
-          color: #fff;
-          font-weight: bold;
-          margin-top: 8px;
-        }
-      }
-
-      .container-volunteers {
-        position : absolute;
-        z-index : 10;
-
-        > .el-container {
-          position : absolute;
-          opacity: .6;
-          transition: opacity 300ms;
-
-          a {
-            position : relative;
-            border: 2px solid #222;
-            border-radius: 50%;
-          }
-          > a > img {
-            border-radius: 50%;
-          }
-          .name {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            left: 0;
-            text-align: center;
-            top: 45px;
-            color: #fff;
-          }
-        }
-      }
-
-      p.participants {
-        position:relative;
-        text-align: center;
+      > .el-col > .el-container h3{
         color: #fff;
-        padding: 20px;
-        z-index:9
+        font-weight: bold;
+        margin-top: 8px;
       }
+    }
+
+    .container-volunteers {
+      position : absolute;
+      z-index : 10;
+
+      > .el-container {
+        position : absolute;
+        opacity: .6;
+        transition: opacity 300ms;
+
+        a {
+          position : relative;
+          border: 2px solid #222;
+          border-radius: 50%;
+        }
+        > a > img {
+          border-radius: 50%;
+        }
+        .name {
+          position: absolute;
+          top: 0;
+          width: 100%;
+          left: 0;
+          text-align: center;
+          top: 45px;
+          color: #fff;
+        }
+      }
+    }
+
+    p.participants {
+      position:relative;
+      text-align: center;
+      color: #fff;
+      padding: 20px;
+      z-index:9
     }
   }
 </style>

@@ -3,7 +3,7 @@
     <a :href="sponsor.pageUrl">
       <img :src="sponsor.imgUrl" :alt="'후원사' + sponsor.name">
     </a>
-    <h3 class="heading">
+    <h3 class="name">
       {{ sponsor.name }}
     </h3>
   </el-container>
@@ -23,4 +23,5 @@ export default {
 img {
   width: 100%;
 }
+
 </style>
