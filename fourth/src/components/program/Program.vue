@@ -14,7 +14,7 @@
           <div class="details">
             <div>
               <h3 :class="{ 'regular-event': session.presenter == null }">{{ session.title }}</h3>
-              <p v-if="session.presenter != null">{{ session.presenter.description}}</p>
+              <p v-if="session.presenter != null">{{ session.presenter.keywords}}</p>
               <p v-else></p>
             </div>
           </div>

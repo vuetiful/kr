@@ -18,6 +18,7 @@ export const presentations = [
       imgUrl: '/static/img/presenters/hax0r.jpg',
       name: '우영준',
       affiliation: 'Logispot',
+      keywords: '새로운 패러다임, 이전 코드의 문제점, vue.js 를 도입하기전 신경써야하는 부분, 실제 서비스에 적용해본 vue.js, 느낀점',
       description: '로지스팟에서 리드 개발을 하고 있는 24 우영준입니다!'
     }
   },
@@ -28,6 +29,7 @@ export const presentations = [
       imgUrl: '/static/img/presenters/irodong.jpg',
       name: '고은정',
       affiliation: 'NHN Bugs',
+      keywords: 'electron, desktop, chromium, node.js, cross-platform',
       description: '게임과 개발을 좋아하는 웹개발자입니다.'
     }
   },
@@ -38,6 +40,7 @@ export const presentations = [
       imgUrl: '/static/img/presenters/june.png',
       name: '최준석',
       affiliation: 'NHN Bugs',
+      keywords: 'graphql, api, apollo, vue-supply, vue',
       description: '본 세션은 GraphQL에 대한 약간의 사전 지식이 필요로 하며, Server feature에 대한 설명이 포함될 수 있습니다.'
     }
   }
