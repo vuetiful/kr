@@ -2,13 +2,13 @@
   <el-container id="contributors" class="container" direction="vertical" v-bind:class="{ 'is-focused' : focused}">
     <div id="dim-of-contributors"></div>
     <el-container class="container-sponsor">
-      <el-row class="sponsors" :gutter="20" type="flex" style="flex-wrap: wrap;" justify="center">
-        <el-col :xs="16" :sm="7" :lg="5" v-for="sponsor in sponsors" :key="sponsor.name">
+      <el-row class="sponsors" type="flex" justify="center">
+        <el-col :xs="10" :sm="5" :lg="4" v-for="sponsor in sponsors" :key="sponsor.name">
           <sponsor :sponsor="sponsor"></sponsor>
         </el-col>
       </el-row>
     </el-container>
-    <div class="container-volunteers">
+    <div class="container-volunteers" v-show="!mobile && !smartphone">
       <volunteer v-for="volunteer in volunteers" :volunteer="volunteer" :key="volunteer.name" :data-id="volunteer.name" @focusOnVolunteer="focusOnVolunteer" @unFocusOnVolunteer="unFocusOnVolunteer"></volunteer>
     </div>
     <p class="participants">
@@ -268,15 +268,7 @@ export default {
       position: relative;
 
       img {
-        width: 100%;
-      }
-
-      > .el-col {
-        width : 200px
-      }
-
-      > .el-col > .el-container {
-        display: inline-block;
+        max-width: 100%;
       }
 
       > .el-col > .el-container h3{
