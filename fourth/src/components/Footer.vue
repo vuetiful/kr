@@ -69,12 +69,13 @@ export default {
   .el-footer {
     background-color: #444;
     text-align: center;
-    padding: 50px 0 0;
+    padding: 75px 0 0;
     color: white;
   }
 
   .container-top {
     width: 100%;
+    margin-bottom: 30px;
   }
 
   .el-col {
@@ -123,7 +124,7 @@ export default {
   .copyright {
     font-size: 0.7em;
     color: white;
-    line-height: 30px;
+    line-height: 50px;
   }
   .bottom-line {
     width: 100%;

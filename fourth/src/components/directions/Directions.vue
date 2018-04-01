@@ -12,7 +12,6 @@ export default {}
 
 <style lang="css" scoped>
 #directions {
-  padding-bottom: 75px;
   background: url("~@/assets/img/bg.png");
 }
 iframe {
