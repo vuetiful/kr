@@ -1,14 +1,23 @@
 <template lang="html">
   <el-container id="program" class="container" direction="vertical">
-    <div id="content">
-      <h1>프로그램</h1>
+    <div>
+      <h2 class="heading">Program</h2>
+      <span class="subheading">프로그램</span>
       <ul class="timeline">
-        <li class="event" v-for="session of program" v-bind:data-date="session.time" v-bind:key="session.time">
-          <h3>{{ session.title }}</h3>
-          <div v-if="!!session.presenter">
-            <p>
-              {{ session.presenter.description }}
-            </p>
+        <li class="event" v-for="session of program" v-bind:key="session.time">
+          <div class="image">
+            <div>
+              <img v-if="session.presenter != null" :src="session.presenter.imgUrl" />
+              <div class="container-img" v-else><div class="img"></div></div>
+              <span :class="{ 'regular-event': session.presenter == null }">{{ session.time }}</span>
+            </div>
+          </div>
+          <div class="details">
+            <div>
+              <h3 :class="{ 'regular-event': session.presenter == null }">{{ session.title }}</h3>
+              <p v-if="session.presenter != null">{{ session.presenter.keywords}}</p>
+              <p v-else></p>
+            </div>
           </div>
         </li>
       </ul>
@@ -32,112 +41,126 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
-/* Variables */
-
-@background: #252827;
-
-@color-primary: #4298C3;
-@color-light: white;
-@spacing: 50px;
-@radius: 4px;
-
-@date: 120px;
-@dotborder: 4px;
-@dot: 11px;
-@line: 4px;
-
-@font-title: 'Oswald', sans-serif;
-@font-text: 'Source Sans Pro', sans-serif;
-
-/* Base */
-
+<style lang="scss" scoped>
 #program {
-  background: @background;
-  font-size: 16px;
+  padding-bottom: 75px;
+  background: url("~@/assets/img/gridtile-dark.png"), #35495e;
 }
-
-strong {
-  font-weight: 600;
+.heading {
+  text-shadow: 1px 1px black;
 }
-
-h1 {
- font-family: @font-title;
- letter-spacing: 1.5px;
- color: @color-light;
- font-weight: 100;
- font-size: 2.4em;
+.subheading {
+  color: white
 }
-
-#content {
-  margin-top: @spacing;
-  text-align: center;
-}
-
-/* Timeline */
-
 .timeline {
-  border-left: @line solid @color-primary;
-  border-bottom-right-radius: @radius;
-  border-top-right-radius: @radius;
-  background: fade(@color-light, 3%);
-  color: fade(white, 80%);
-  font-family: @font-text;
-  margin: @spacing auto;
-  letter-spacing: 0.5px;
-  position: relative;
-  line-height: 1.4em;
-  font-size: 1.03em;
-  padding: @spacing;
-  list-style: none;
-  text-align: left;
-  font-weight: 100;
-  max-width: 40%;
+  background: #35495e;
+  color: #ffffff;
+  font-family: arial, sans-serif;
+  padding: 50px 0;
+}
+.event:first-child .details::before {
+  height: 90px;
+  top: 53px;
+}
+.event:last-child .details::before {
+  height: 55px;
+}
+.event {
+  display: flex;
+  max-width: 920px;
+  margin: 0 auto;
 
-  h1, h2, h3 {
-   font-family: @font-title;
-   letter-spacing: 1.5px;
-   font-weight: 100;
-   font-size: 1.4em;
-  }
-
-  .event {
-    border-bottom: 1px dashed fade(@color-light, 10%);
-    padding-bottom: (@spacing * 0.5);
-    margin-bottom: @spacing;
+  .image {
     position: relative;
+    padding: 1em 2em;
+    z-index: 1;
 
-    &:last-of-type {
-      padding-bottom: 0;
-      margin-bottom: 0;
-      border: none;
+    > div {
+      position: relative;
+      text-align: center;
+      font-size: 0.8em;
+
+      // &::after {
+      //   content: '';
+      //   width: 100%;
+      //   height: 0;
+      //   border-bottom: 1px solid rgba(255,255,255,0.75);
+      //   position: absolute;
+      //   top: 2.9em;
+      //   left: 3em;
+      //   z-index: 0;
+      // }
     }
 
-    &:before, &:after {
-      position: absolute;
-      display: block;
-      top: 0;
-    }
-
-    &:before {
-      left: (((@date * 0.6) + @spacing + @line + @dot + (@dotborder * 2)) * 1.5) * -1;
-      color: fade(@color-light, 40%);
-      content: attr(data-date);
-      text-align: right;
-      font-weight: 100;
-      font-size: 0.9em;
-      min-width: @date;
-    }
-
-    &:after {
-      box-shadow: 0 0 0 @dotborder fade(@color-primary,100%);
-      left: (@spacing + @line + (@dot * 0.35)) * -1;
-      background: lighten(@background,5%);
+    img {
+      margin: auto 0;
       border-radius: 50%;
-      height: @dot;
-      width: @dot;
-      content: "";
-      top: 5px;
+      height: 5em;
+      border: 0.3em solid #42b883;
+    }
+    .container-img {
+      padding: 33px 0;
+    }
+    .img {
+      margin: auto;
+      border-radius: 50%;
+      width: 0.75em;
+      height: 0.75em;
+      background: #42b883;
+    }
+    span {
+      display: block;
+      clear: both;
+      width: 6em;
+      padding: 0.25em 0;
+      margin: 0.5em 0;
+      color: #42b883;
+    }
+    span.regular-event {
+      position: relative;
+      top: -24px;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  .details {
+    position: relative;
+    flex-grow: 1;
+    text-align: left;
+    > div {
+      padding: 1em;
+      margin: 1em 0;
+
+      h3 {
+        color: white;
+        font-size: 1.4em;
+        margin: 0;
+        padding: 0 0 0.5em 0;
+        letter-spacing: 0.1em;
+        line-height: 1.2em;
+      }
+      h3.regular-event {
+        margin-top: 10px;
+        padding: 0;
+      }
+
+      p {
+        margin: 0;
+        padding: 0;
+        line-height: 150%;
+        color: #aaa;
+      }
+    }
+
+    &::before {
+      content: '';
+      width: 0;
+      height: 100%;
+      border-left: 1px solid rgba(255,255,255,0.75);
+      position: absolute;
+      top: 0;
+      left: -4.43em;
+      z-index: 0;
     }
   }
 }

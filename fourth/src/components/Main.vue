@@ -30,5 +30,9 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
+.el-main {
+  padding: 0;
+  overflow-x: hidden;
+}
 </style>

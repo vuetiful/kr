@@ -1,19 +1,18 @@
 <template lang="html">
   <el-container id="contributors" class="container" direction="vertical" v-bind:class="{ 'is-focused' : focused}">
-    <h2 class="heading">
-      도움의 손길
-    </h2>
+    <h2 class="heading">Contributors</h2>
+    <span class="subheading">도움의 손길</span>
     <div id="dim-of-contributors"></div>
     <el-container class="container-sponsor">
-      <div class="sponsors">
-        <el-col v-for="sponsor in sponsors" :key="sponsor.name">
+      <el-row class="sponsors" :gutter="20" type="flex" style="flex-wrap: wrap;" justify="center">
+        <el-col :xs="16" :sm="7" :lg="5" v-for="sponsor in sponsors" :key="sponsor.name">
           <sponsor :sponsor="sponsor"></sponsor>
         </el-col>
-      </div>
+      </el-row>
     </el-container>
-    <el-container class="container-volunteers">
+    <div class="container-volunteers">
       <volunteer v-for="volunteer in volunteers" :volunteer="volunteer" :key="volunteer.name" :data-id="volunteer.name" @focusOnVolunteer="focusOnVolunteer" @unFocusOnVolunteer="unFocusOnVolunteer"></volunteer>
-    </el-container>
+    </div>
     <p class="participants">
       <span class="participant-sponsor" v-for="(participantSponsor, index) in participantSponsors" :key="index">
         {{ participantSponsor }}
@@ -84,7 +83,7 @@ export default {
       var scopeOfActivityX = Math.floor(Math.random() * minimumScopeOfActivityX - 0 + 1) + 0
       var scopeOfActivityY = Math.floor(Math.random() * maximumScopeOfActivityY - 0 + 1) + 0
 
-      if (getComputedStyle(el)['transform'] !== 'none') {
+      if (getComputedStyle(el)['transform'] !== 'none' && getComputedStyle(el)['transform'] != null) {
         var currentScopeOfActivityX = parseInt(/\(\s*([^)]+?)\s*\)/.exec(getComputedStyle(el)['transform'])[0].split(/\s*,\s*/)[5].replace(/\)/g, '')) + 1
         var currentScopeOfActivityY = parseInt(/\(\s*([^)]+?)\s*\)/.exec(getComputedStyle(el)['transform'])[0].split(/\s*,\s*/)[4]) + 1
 
@@ -169,10 +168,10 @@ export default {
   }
 
   #contributors {
-    overflow:  hidden;
-    height: 400px;
-    width: 100%;
     background-color: #fff;
+    width: 100%;
+    // height: 400px;
+    overflow:  hidden;
 
     > h2 {
       font-size: 18px;
@@ -184,23 +183,18 @@ export default {
 
     #dim-of-contributors {
       position:absolute;
-      top:0px;
-      left:0px;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
       height:100%;
       width:100%;
       background-size: cover;
     }
 
-    .container-sponsor {
-      position : absolute;
-      width : 100%;
-      height : 100%;
-    }
-
     .container-sponsor > .sponsors {
-      margin : auto;
       z-index: 15;
-      max-width: 100%;
+      width: 100%;
 
       img {
         max-width : 100%;
@@ -214,15 +208,15 @@ export default {
         display: inline-block;
       }
 
-      > .el-col > .el-container h3 {
-        color: #111;
+      > .el-col > .el-container h3{
+        color: #fff;
         font-weight: bold;
         margin-top: 8px;
       }
     }
 
     .container-volunteers {
-      position : relative;
+      position : absolute;
       z-index : 10;
 
       > .el-container {

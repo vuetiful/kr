@@ -1,6 +1,6 @@
 <template lang="html">
   <transition name="fade">
-    <el-header class="header" v-show="scrollY > windowHeight && !mobile && !smartphone">
+    <el-header class="header" v-show="scrollY >= windowHeight && !mobile && !smartphone">
       <el-container>
         <el-container>
           <h1 class="header-logo"><a href="#"><img src="../assets/logo.png" alt="메인으로 이동" style="width: 50px; height: 50px;"></a></h1>
@@ -24,11 +24,11 @@ export default {
     activeIndex () {
       if (this.scrollY > this.windowHeight) {
         switch (true) {
-          case this.scrollY > 1200 && this.scrollY <= 1400:
+          case this.scrollY > 1600 && this.scrollY <= 2800:
             return '2'
-          case this.scrollY > 1400 && this.scrollY <= 1600:
+          case this.scrollY > 2800 && this.scrollY <= 3200:
             return '3'
-          case this.scrollY > 1600:
+          case this.scrollY > 3200:
             return '4'
           default:
             return '1'
@@ -61,10 +61,8 @@ export default {
   z-index: 1000;
   width: 100%;
   padding: 0;
-  background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
   transition: all 0.2;
+  background: rgba(255,255,255,0.75);
 }
 
 .header .header-logo {

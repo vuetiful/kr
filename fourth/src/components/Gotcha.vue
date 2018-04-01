@@ -4,14 +4,14 @@
       <el-carousel-item v-for="item in 3" :key="item"></el-carousel-item>
     </el-carousel>
     <div class="bg-dot"></div>
-    <div class="text-box">
-      <img src="~@/assets/logo.png" alt="" class="logo" :class="{ desktop }">
-      <p class="date">{{ generalInfo.date }}</p>
-      <p class="time">{{ generalInfo.time}}</p>
-      <p class="location">{{ generalInfo.location }}</p>
-      <el-button type="primary" @click="register" target="_blank" class="register-btn">참가 신청</el-button>
+    <div class="center" :class="{ laptop, desktop }">
+      <img src="~@/assets/logo.png" alt="뷰티풀 코리아" class="logo" :class="{ laptop, desktop }">
+      <div class="info" :class="{ laptop, desktop }">
+        <p class="date">{{ generalInfo.date }}<br v-if="mobile || smartphone"><span class="time"> {{ generalInfo.time}}</span></p>
+        <p class="location">{{ generalInfo.location }}</p>
+      </div>
+      <el-button type="primary" :class="{ laptop, desktop }" @click="register" target="_blank" class="register-btn">참가 신청</el-button>
     </div>
-    <p class="intro" v-if="!mobile && !smartphone">{{ generalInfo.intro }}</p>
     <svg class="arrows">
       <path class="a" d="M0 0 L15 16 L30 0"></path>
     </svg>
@@ -85,46 +85,42 @@ export default {
   z-index: 2;
   pointer-events: none;
 }
-.text-box {
-  margin: 18% auto 6%;
-  font-size: 1.2em;
+.center {
+  margin-top: 25%;
+  font-size: 1em;
   color: white;
   line-height: 30px;
-  /* background: url("~@/assets/img/text_bg.png") no-repeat center center; */
   background-size: contain;
   background-blend-mode: overlay;
   z-index: 10;
+}
+.center.laptop {
+  margin-top: 10%;
+}
+.center.desktop {
+  margin-top: 18%;
 }
 .logo {
   width: 14em;
   margin-bottom: 20px;
 }
-.logo.desktop {
+.logo.laptop {
   width: 24em;
 }
-
-.text-box .time {
-  font-size: 0.8em;
-  line-height: 36px;
+.logo.desktop {
+  width: 30em;
 }
 
-.text-box .location {
-  line-height: 50px;
+.info {
+  position: static;
 }
+
+.location {
+  margin-bottom: 20px;
+}
+
 .register-btn {
   margin: 10px 0 30px;
-}
-
-.intro {
-  position: absolute;
-  bottom: 100px;
-  margin-left: 50%;
-  transform: translateX(-50%);
-  width: 40%;
-  font-size: 0.75em;
-  color: white;
-  line-height: 1.2;
-  z-index: 10;
 }
 
 .arrows {
