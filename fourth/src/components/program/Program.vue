@@ -1,7 +1,8 @@
 <template lang="html">
   <el-container id="program" class="container" direction="vertical">
     <div>
-      <h2 class="heading">프로그램</h2>
+      <h2 class="heading">Program</h2>
+      <span class="subheading">프로그램</span>
       <ul class="timeline">
         <li class="event" v-for="session of program" v-bind:key="session.time">
           <div class="image">
@@ -46,9 +47,10 @@ export default {
   background: url("~@/assets/img/gridtile-dark.png"), #35495e;
 }
 .heading {
-  font-size: 4vh;
-  margin: 120px 0 50px;
-  color: white;
+  text-shadow: 1px 1px black;
+}
+.subheading {
+  color: white
 }
 .timeline {
   background: #35495e;
