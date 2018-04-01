@@ -9,6 +9,7 @@
     <app-header></app-header>
     <app-main></app-main>
     <app-footer></app-footer>
+    <side-button></side-button>
   </div>
 </template>
 
@@ -18,6 +19,7 @@ import { generalInfo } from '@/store/store'
 import Header from '@/components/Header'
 import Main from '@/components/Main'
 import Footer from '@/components/Footer'
+import SideButton from '@/components/SideButton'
 export default {
   name: 'App',
   data () {
@@ -29,7 +31,8 @@ export default {
     Gotcha,
     AppHeader: Header,
     AppMain: Main,
-    AppFooter: Footer
+    AppFooter: Footer,
+    SideButton: SideButton
   }
 }
 </script>
