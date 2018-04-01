@@ -2,7 +2,7 @@
   <el-container id="contributors" class="container" direction="vertical" v-bind:class="{ 'is-focused' : focused}">
     <div id="dim-of-contributors"></div>
     <el-container class="container-sponsor">
-      <el-row class="sponsors" type="flex" justify="center">
+      <el-row class="sponsors" :gutter="20" type="flex" justify="center">
         <el-col :xs="10" :sm="12" :lg="12" v-for="sponsor in sponsors" :key="sponsor.name">
           <sponsor :sponsor="sponsor"></sponsor>
         </el-col>
@@ -268,18 +268,22 @@ export default {
       max-width: 400px;
 
       a {
-        border-radius: 50%;
+        border-radius: 10px;
+        box-shadow: 0 0 2px rgba(0,0,0,0.2);
+      }
+
+      a:hover {
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
       }
 
       img {
         max-width: 100%;
-
       }
 
       > .el-col > .el-container h3{
         font-size: 1.2em;
-        margin-top: 8px;
-        color: #111;
+        margin-top: 12px;
+        color: #42b883;
       }
     }
 
