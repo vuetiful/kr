@@ -113,19 +113,10 @@ export default {
   }
 
   #contributors {
-    background-color: #fff;
+    padding-bottom: 75px;
     width: 100%;
-    // height: 400px;
+    background-color: #fff;
     overflow:  hidden;
-
-    // > h2 {
-    //   font-size: 18px;
-    //   font-weight: 800;
-    //   font-family: 'Dancing Script', cursive;
-    //   color: #fff;
-    //   z-index: 9;
-    //   margin-top: 15px;
-    // }
     #dim-of-contributors {
       position:absolute;
       top: 0;
