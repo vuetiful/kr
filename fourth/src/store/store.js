@@ -104,14 +104,15 @@ export const volunteers = [
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: '/static/img/volunteers/profile/sam.png',
-    backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
+    backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
+>>>>>>> aa88b748fc3245bce41ac3fb9eb2b7bbfc3c5d6a
     name: '박새미',
     description: '잠만보'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: '/static/img/volunteers/profile/chris.jpg',
-    backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
+    backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
     name: '양성민',
     description: '조금 큰 사진요정'
   },
@@ -125,49 +126,49 @@ export const volunteers = [
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: '/static/img/volunteers/profile/kkd927.png',
-    backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
+    backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
     name: '권경덕',
     description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'https://media.licdn.com/dms/image/C4E03AQGlhtKrF4Kw5g/profile-displayphoto-shrink_200_200/0?e=1527562800&v=alpha&t=CtK3XGzxnJDenplQQE-RYgR2XRAjT7TO60kIEEiGx5I',
     imgUrl: '/static/img/volunteers/profile/wicksome.png',
-    backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
+    backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
     name: '김영준',
     description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: '/static/img/volunteers/profile/chayeoi.png',
-    backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
+    backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
     name: '김찬연',
     description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: '/static/img/volunteers/profile/no-profile.jpg',
-    backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
+    backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
     name: '김범연',
     description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: '/static/img/volunteers/profile/kelly.png',
-    backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
+    backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
     name: '우경화',
     description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: '/static/img/volunteers/profile/no-profile.jpg',
-    backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
+    backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
     name: '고예슬',
     description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: '/static/img/volunteers/profile/kciter.png',
-    backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
+    backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
     name: '이선협',
     description: '설명을 입력해주세요.'
   }

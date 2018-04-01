@@ -35,7 +35,8 @@ export default {
       regularParticipants,
       focused: false,
       intervalIds: [],
-      assignedPositions: {}
+      assignedPositions: {},
+      trespasser: []
     }
   },
   components: {
@@ -80,7 +81,7 @@ export default {
         self.painting(el)
       }, 800)
     },
-    getAbleScopeOfActivity (maximumScopeOfActivityX, maximumScopeOfActivityY) {
+    getAbleScopeOfActivity (maximumScopeOfActivityX, maximumScopeOfActivityY, el) {
       const sponsorFirstRect = document.querySelectorAll('.container-sponsor > * img')[0].getBoundingClientRect()
       const sponsorLastRect = document.querySelectorAll('.container-sponsor > * img')[1].getBoundingClientRect()
       const sponsorExtraSpace = 120
@@ -97,23 +98,15 @@ export default {
         x = Math.floor(Math.random() * (500 - 300 + 1) + 300) + (((x - (sponsorFirstRect.x - sponsorExtraSpace)) <= (x - (sponsorLastRect.x + sponsorExtraSpace))) ? x + (x - (sponsorFirstRect.x - sponsorExtraSpace)) : x - (x - (sponsorLastRect.x + sponsorExtraSpace)))
       }
 
-      var trespassOnX = false
-      var trespassOnY = false
-
       for (var i = 0; i < Object.keys(this.assignedPositions).length; i++) {
         const assignedPosition = this.assignedPositions[Object.keys(this.assignedPositions)[i]]
-        if (x >= assignedPosition[0] && x <= (assignedPosition[0] + volunteerExtraSpace)) {
-          trespassOnX = true
+        if (x >= assignedPosition[0] && x <= (assignedPosition[0] + sponsorExtraSpace)) {
+          x = (maximumScopeOfActivityX <= ((assignedPosition[0] + sponsorExtraSpace) + 100)) ? (x - 100) : (assignedPosition[0] + sponsorExtraSpace) + 100
         }
-        if (y >= assignedPosition[1] && y <= (assignedPosition[1] + volunteerExtraSpace)) {
-          trespassOnY = true
+        if (y >= assignedPosition[1] && y <= (assignedPosition[1] + sponsorExtraSpace)) {
+          y = (maximumScopeOfActivityY <= ((assignedPosition[1] + sponsorExtraSpace) + 50)) ? (y - 50) : ((assignedPosition[1] + sponsorExtraSpace) + 50)
         }
       }
-
-      var moveTo = Math.floor(Math.random() * (100 - 10 + 1) + 10)
-
-      x = (trespassOnX) ? ((maximumScopeOfActivityX <= (x + volunteerExtraSpace)) ? (x - volunteerExtraSpace) : (x + moveTo)) : x
-      y = (trespassOnY) ? ((maximumScopeOfActivityY <= (y + volunteerExtraSpace)) ? (y - volunteerExtraSpace) : (y + moveTo)) : y
 
       return [
         x,
@@ -121,13 +114,13 @@ export default {
       ]
     },
     assignPosition (el) {
-      const maximumScopeOfActivityX = parseInt(document.querySelector('.container-volunteers').offsetWidth) - 100
-      const maximumScopeOfActivityY = parseInt(document.querySelector('.container-volunteers').offsetHeight) - 100
+      const maximumScopeOfActivityX = parseInt(document.querySelector('.container-volunteers').offsetWidth) - 150
+      const maximumScopeOfActivityY = parseInt(document.querySelector('.container-volunteers').offsetHeight) - 150
 
       const maxScopeX = 15
       const maxScopeY = 15
 
-      const ableScope = this.getAbleScopeOfActivity(maximumScopeOfActivityX, maximumScopeOfActivityY)
+      const ableScope = this.getAbleScopeOfActivity(maximumScopeOfActivityX, maximumScopeOfActivityY, el)
       var scopeOfActivityX = ableScope[0]
       var scopeOfActivityY = ableScope[1]
 
@@ -173,18 +166,15 @@ export default {
       el.setAttribute('arithmetics', (el.getAttribute('arithmetics') === 'minus') ? 'plus' : 'minus')
       return scopeOfActivity
     },
-    lightUp (nodes) {
-      for (var i = 0; i < nodes.length; i++) {
-        var node = nodes[i]
-        var radius = 0
-        var interval = window.setInterval(function () {
-          node.style.webkitMask = '-webkit-gradient(radial, 17 17, ' + radius + ', 17 17, ' + (radius + 15) + ', from(rgb(0, 0, 0)), color-stop(0.5, rgba(0, 0, 0, 0.2)), to(rgb(0, 0, 0)))'
-          radius++
-          if (node.offsetWidth === radius) {
-            window.clearInterval(interval)
-          }
-        }, 10)
-      }
+    lightUp (node) {
+      var radius = 0
+      var interval = window.setInterval(function () {
+        node.style.webkitMask = '-webkit-gradient(radial, 17 17, ' + radius + ', 17 17, ' + (radius + 15) + ', from(rgb(0, 0, 0)), color-stop(0.5, rgba(0, 0, 0, 0.2)), to(rgb(0, 0, 0)))'
+        radius++
+        if (node.offsetWidth === radius) {
+          window.clearInterval(interval)
+        }
+      }, 10)
     },
     checkVisible (elm, threshold, mode) {
       threshold = threshold || 0
@@ -222,7 +212,10 @@ export default {
       if (self.checkVisible(contributorsElm, (scrollDist + ExtraDist), scrollMode) && !alreadySeen) {
         alreadySeen = true
         self.spreadOut()
-        self.lightUp(document.querySelectorAll('.container-sponsor img'))
+        const sponsorImages = document.querySelectorAll('.container-sponsor img')
+        for (var i = 0; i < sponsorImages.length; i++) {
+          self.lightUp(sponsorImages[i])
+        }
       }
     }
 
