@@ -7,7 +7,7 @@ export const generalInfo = {
   date: '2018. 04. 17 (화)',
   time: '19:30 ~ 21:30',
   location: '@구글 캠퍼스 서울 메인 이벤트 홀',
-  intro: 'Vuetiful Korea(뷰티풀 코리아)는 관심주제 발표를 듣고 서로 관련 경험을 공유하며 네트워킹하는 모임으로, 2017년 4월 19일에 개최된 Vue.js 한국어 사용자 모임에서 시작하였습니다.'
+  intro: 'Vuetiful Korea(뷰티풀 코리아)는 Vue.js에 대한 관심주제 발표를 듣고 서로 관련 경험을 공유하며 네트워킹하는 모임으로, 2017년 4월 19일에 개최된 Vue.js 한국어 사용자 모임에서 시작하였습니다.'
 }
 
 export const presentations = [
