@@ -6,7 +6,6 @@
     <app-header></app-header>
     <app-main></app-main>
     <app-footer></app-footer>
-    <side-button></side-button>
   </div>
 </template>
 
@@ -15,15 +14,13 @@ import Gotcha from '@/components/Gotcha'
 import Header from '@/components/Header'
 import Main from '@/components/Main'
 import Footer from '@/components/Footer'
-import SideButton from '@/components/SideButton'
 export default {
   name: 'App',
   components: {
     Gotcha,
     AppHeader: Header,
     AppMain: Main,
-    AppFooter: Footer,
-    SideButton: SideButton
+    AppFooter: Footer
   }
 }
 </script>

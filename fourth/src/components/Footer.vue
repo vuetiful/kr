@@ -58,33 +58,33 @@ export default {
 
 <style lang="css" scoped>
   .el-footer {
-    height: 270px !important;
+    min-height: 200px;
     background-color: #444;
     text-align: center;
-    padding: 50px 0 0 0 ;
-    color: white;
-    position: relative;
+    padding: 50px 0 0;
   }
-
-  .container .head {
-    font-weight: bold;
+  .about {
     margin-bottom: 20px;
   }
-
-  .container .head::after {
-    width: 5rem;
-    border-top: solid 1px;
-    display: inline-block;
-    content: "";
+  img {
+    width: 60px;
   }
-
-  .container .content {
-    line-height: 20px;
+  .intro {
+    font-size: 0.8em;
+    text-align: left;
+    line-height: 1.5;
+    color: white;
   }
-
-  .container .intro {
-    line-height: 15px;
+  .el-dropdown-link {
+    cursor: pointer;
+    color: #409EFF;
+  }
+  .el-icon-arrow-down {
     font-size: 12px;
+  }
+  li {
+    display: inline;
+    margin-left: 4px;
   }
   a {
     color: white;
