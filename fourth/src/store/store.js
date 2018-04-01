@@ -110,7 +110,7 @@ export const volunteers = [
   },
   {
     pageUrl: 'http://github.com/vuetiful',
-    backgroundImageUrl: '/static/img/volunteers/profile/chris.jpg',
+    imgUrl: '/static/img/volunteers/profile/chris.jpg',
     backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
     name: '양성민',
     description: '조금 큰 사진요정'
