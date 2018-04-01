@@ -1,5 +1,5 @@
 <template lang="html">
-  <el-container>
+  <el-container direction="vertical">
     <a :href="sponsor.pageUrl">
       <img :src="sponsor.imgUrl" :alt="'후원사' + sponsor.name">
     </a>
@@ -19,5 +19,8 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
+img {
+  width: 100%;
+}
 </style>
