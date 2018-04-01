@@ -117,10 +117,10 @@ export const volunteers = [
   },
   {
     pageUrl: 'http://github.com/vuetiful',
-    imgUrl: 'http://placehold.it/50x50',
-    backgroundImageUrl: 'http://cfile22.uf.tistory.com/image/266CBC4E51CBE6562D4633',
+    imgUrl: '/static/img/volunteers/profile/no-profile.jpg',
+    backgroundImageUrl: '/static/img/volunteers/background-image/hax0r.jpg',
     name: '우영준',
-    description: '설명을 입력해주세요.'
+    description: 'a.k.a hax0r'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
