@@ -105,7 +105,6 @@ export const volunteers = [
     pageUrl: 'http://github.com/vuetiful',
     imgUrl: '/static/img/volunteers/profile/sam.png',
     backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
->>>>>>> aa88b748fc3245bce41ac3fb9eb2b7bbfc3c5d6a
     name: '박새미',
     description: '잠만보'
   },
