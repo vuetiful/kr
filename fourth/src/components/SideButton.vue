@@ -30,4 +30,8 @@ export default {
     bottom: 72px;
     z-index: 1000;
   }
+  .el-button {
+    border-right: 50%;
+    padding: 12px;
+  }
 </style>
