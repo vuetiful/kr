@@ -130,11 +130,11 @@ export const volunteers = [
     description: 'kkd927'
   },
   {
-    pageUrl: 'https://media.licdn.com/dms/image/C4E03AQGlhtKrF4Kw5g/profile-displayphoto-shrink_200_200/0?e=1527562800&v=alpha&t=CtK3XGzxnJDenplQQE-RYgR2XRAjT7TO60kIEEiGx5I',
+    pageUrl: 'https://wickso.me/',
     imgUrl: '/static/img/volunteers/profile/wicksome.png',
     backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
     name: '김영준',
-    description: '설명을 입력해주세요.'
+    description: 'SGkgZ3V5cyEgSSdtIHdpY2tzb21lIHNvZnR3YXJlIGVuZ2luZWVyISA6RA=='
   },
   {
     pageUrl: 'http://github.com/vuetiful',
