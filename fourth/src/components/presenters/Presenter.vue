@@ -5,17 +5,23 @@
         <span class="name">{{ presenter.name }}</span>
         <div class="bottom clearfix">
           <time class="time">{{ presenter.affiliation }}</time>
-          <div class="description">{{ presenter.description }}</div>
+          <div class="description" v-html="getMarkedDescription()"></div>
         </div>
       </div>
     </el-card>
 </template>
 
 <script>
+import marked from 'marked'
 export default {
   props: {
     presenter: {
       type: Object
+    }
+  },
+  methods: {
+    getMarkedDescription () {
+      return marked(this.presenter.description)
     }
   }
 }
