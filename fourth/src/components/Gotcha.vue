@@ -35,7 +35,7 @@ export default {
     register () {
       this.$message({
         showClose: true,
-        message: '아직 참가 신청 전 입니다.',
+        message: '4월 3일(화) 오전 11시 오픈 예정입니다.',
         type: 'warning'
       })
     }
@@ -86,19 +86,13 @@ export default {
   pointer-events: none;
 }
 .center {
-  margin-top: 25%;
+  margin: auto;
   font-size: 1em;
   color: white;
   line-height: 30px;
   background-size: contain;
   background-blend-mode: overlay;
   z-index: 10;
-}
-.center.laptop {
-  margin-top: 10%;
-}
-.center.desktop {
-  margin-top: 18%;
 }
 .logo {
   width: 14em;

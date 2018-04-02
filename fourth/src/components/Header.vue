@@ -9,7 +9,7 @@
           <el-menu :default-active="activeIndex" mode="horizontal" @select="handleSelect">
             <el-menu-item index="1"><a href="#presenters">발표자</a></el-menu-item>
             <el-menu-item index="2"><a href="#program">프로그램</a></el-menu-item>
-            <el-menu-item index="3"><a href="#directions">찾아오는 길</a></el-menu-item>
+            <el-menu-item index="3"><a href="#directions">오시는 길</a></el-menu-item>
           </el-menu>
         </el-container>
       </el-container>
@@ -25,10 +25,8 @@ export default {
         switch (true) {
           case this.scrollY > 1600 && this.scrollY <= 2800:
             return '2'
-          case this.scrollY > 2800 && this.scrollY <= 3200:
+          case this.scrollY > 4950:
             return '3'
-          case this.scrollY > 3200:
-            return '4'
           default:
             return '1'
         }

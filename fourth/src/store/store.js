@@ -95,18 +95,18 @@ export const sponsors = [
 
 export const volunteers = [
   {
-    pageUrl: 'http://github.com/vuetiful',
+    pageUrl: 'http://seungmin.kr',
     imgUrl: '/static/img/volunteers/profile/smilee.jpg',
-    backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
+    backgroundImageUrl: '/static/img/volunteers/background-image/smilee.jpg',
     name: '이승민',
-    description: '설명을 입력해주세요.'
+    description: '@smilee'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
-    imgUrl: '/static/img/volunteers/profile/no-profile.jpg',
+    imgUrl: '/static/img/volunteers/profile/sam.png',
     backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
     name: '박새미',
-    description: '설명을 입력해주세요.'
+    description: '잠만보'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
@@ -117,28 +117,28 @@ export const volunteers = [
   },
   {
     pageUrl: 'http://github.com/vuetiful',
-    imgUrl: '/static/img/volunteers/profile/no-profile.jpg',
+    imgUrl: '/static/img/volunteers/profile/hax0r.jpg',
     backgroundImageUrl: '/static/img/volunteers/background-image/hax0r.jpg',
     name: '우영준',
     description: 'a.k.a hax0r'
   },
   {
-    pageUrl: 'http://github.com/vuetiful',
-    imgUrl: '/static/img/volunteers/profile/no-profile.jpg',
-    backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
+    pageUrl: 'https://www.facebook.com/kkd927',
+    imgUrl: '/static/img/volunteers/profile/kkd927.png',
+    backgroundImageUrl: '/static/img/volunteers/background-image/kkd927b2.png',
     name: '권경덕',
-    description: '설명을 입력해주세요.'
+    description: 'kkd927'
   },
   {
-    pageUrl: 'https://media.licdn.com/dms/image/C4E03AQGlhtKrF4Kw5g/profile-displayphoto-shrink_200_200/0?e=1527562800&v=alpha&t=CtK3XGzxnJDenplQQE-RYgR2XRAjT7TO60kIEEiGx5I',
-    imgUrl: '/static/img/volunteers/profile/no-profile.jpg',
+    pageUrl: 'https://wickso.me/',
+    imgUrl: '/static/img/volunteers/profile/wicksome.png',
     backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
     name: '김영준',
-    description: '설명을 입력해주세요.'
+    description: 'SGkgZ3V5cyEgSSdtIHdpY2tzb21lIHNvZnR3YXJlIGVuZ2luZWVyISA6RA=='
   },
   {
     pageUrl: 'http://github.com/vuetiful',
-    imgUrl: '/static/img/volunteers/profile/no-profile.jpg',
+    imgUrl: '/static/img/volunteers/profile/chayeoi.png',
     backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
     name: '김찬연',
     description: '설명을 입력해주세요.'
@@ -152,7 +152,7 @@ export const volunteers = [
   },
   {
     pageUrl: 'http://github.com/vuetiful',
-    imgUrl: '/static/img/volunteers/profile/no-profile.jpg',
+    imgUrl: '/static/img/volunteers/profile/kelly.png',
     backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
     name: '우경화',
     description: '설명을 입력해주세요.'
@@ -166,7 +166,7 @@ export const volunteers = [
   },
   {
     pageUrl: 'http://github.com/vuetiful',
-    imgUrl: '/static/img/volunteers/profile/no-profile.jpg',
+    imgUrl: '/static/img/volunteers/profile/kciter.png',
     backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
     name: '이선협',
     description: '설명을 입력해주세요.'
@@ -174,12 +174,44 @@ export const volunteers = [
 ]
 
 export const participantSponsors = [
-  '홍길동',
-  '김철수'
+  '이선협'
 ]
 
 export const regularParticipants = [
-  '김모모',
-  '이라라',
-  '박누구'
+  '정재훈',
+  '김인숙',
+  '진유정'
+]
+
+export const prevMeetups = [
+  {
+    name: 'Vuetiful Korea 1회',
+    pageUrl: 'http://vuejs.kr/meetup/#/first'
+  },
+  {
+    name: 'Vuetiful Korea 2회',
+    pageUrl: 'http://vuejs.kr/meetup/#/second'
+  },
+  {
+    name: 'Vuetiful Korea 3회',
+    pageUrl: 'http://vuejs.kr/meetup/#/'
+  }
+]
+
+export const sns = [
+  {
+    name: 'Facebook',
+    pageUrl: 'https://www.facebook.com/groups/vuejs.korea',
+    faClass: 'fab fa-facebook'
+  },
+  {
+    name: 'Slack',
+    pageUrl: 'https://vuejs-korea.herokuapp.com',
+    faClass: 'fab fa-slack'
+  },
+  {
+    name: 'Github',
+    pageUrl: 'https://github.com/vuejs-kr',
+    faClass: 'fab fa-github'
+  }
 ]

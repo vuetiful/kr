@@ -2,13 +2,13 @@
   <el-container id="contributors" class="container" direction="vertical" v-bind:class="{ 'is-focused' : focused}">
     <div id="dim-of-contributors"></div>
     <el-container class="container-sponsor">
-      <el-row class="sponsors" :gutter="20" type="flex" style="flex-wrap: wrap;" justify="center">
-        <el-col :xs="16" :sm="7" :lg="5" v-for="sponsor in sponsors" :key="sponsor.name">
+      <el-row class="sponsors" :gutter="20" type="flex" justify="center">
+        <el-col :xs="10" :sm="12" :lg="12" v-for="sponsor in sponsors" :key="sponsor.name">
           <sponsor :sponsor="sponsor"></sponsor>
         </el-col>
       </el-row>
     </el-container>
-    <div class="container-volunteers">
+    <div class="container-volunteers" v-show="!mobile && !smartphone">
       <volunteer v-for="volunteer in volunteers" :volunteer="volunteer" :key="volunteer.name" :data-id="volunteer.name" @focusOnVolunteer="focusOnVolunteer" @unFocusOnVolunteer="unFocusOnVolunteer"></volunteer>
     </div>
     <p class="participants">
@@ -260,31 +260,30 @@ export default {
 
     .container-sponsor {
       position: relative;
-      width: 400px;
       z-index: 11;
       margin: auto;
     }
     .container-sponsor > .sponsors {
-      width: 400px;
       position: relative;
+      max-width: 400px;
+
+      a {
+        border-radius: 10px;
+        box-shadow: 0 0 2px rgba(0,0,0,0.2);
+      }
+
+      a:hover {
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      }
 
       img {
-        max-width : 100%;
-      }
-
-      > .el-col {
-        width : 200px
-      }
-
-      > .el-col > .el-container {
-        display: inline-block;
+        max-width: 100%;
       }
 
       > .el-col > .el-container h3{
-        font-weight: bold;
-        margin-top: 8px;
-        color: #111;
-        text-decoration: underline;
+        font-size: 1.2em;
+        margin-top: 12px;
+        color: #42b883;
       }
     }
 
@@ -292,7 +291,7 @@ export default {
       position : absolute;
       z-index : 10;
       width:100%;
-      height:100%;
+      height:85%;
       display: block;
 
       > .el-container {
@@ -305,7 +304,7 @@ export default {
         a {
           display: block;
           position : relative;
-          border: 2px solid #222;
+          border: 1px solid #ccc;
           border-radius: 50%;
         }
         > a > img {
@@ -314,13 +313,14 @@ export default {
         }
         .name {
           position: absolute;
-          top: 50%;
+          top: 75%;
           width: 100%;
           left: 0;
           text-align: center;
           color: #fff;
+          text-shadow: 0 0 2px #35495e;
           font-size: 80%;
-          font-weight: 800;
+          font-weight: 500;
           transform: translateY(-50%);
         }
       }
