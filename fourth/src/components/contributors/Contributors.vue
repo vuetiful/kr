@@ -242,8 +242,8 @@ export default {
   }
 
   #contributors {
-    padding: 60px 0 40px;
-    background-color: #fff;
+    padding: 50px 0 75px;
+    background: url("~@/assets/img/gridtile-dark.png"), #35495e;
     width: 100%;
     overflow:  hidden;
 
@@ -269,11 +269,13 @@ export default {
 
       a {
         border-radius: 10px;
-        box-shadow: 0 0 2px rgba(0,0,0,0.2);
+        box-shadow: 0 0 2px rgba(0,0,0,0.5);
+        background: #eee;
       }
 
       a:hover {
-        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        box-shadow: 0 0 5px rgba(0,0,0,0.5);
+        background: #fff;
       }
 
       img {
@@ -331,7 +333,7 @@ export default {
       margin-top: 20px;
       font-size: 0.8em;
       text-align: center;
-      color: #35495e;
+      color: #fff;
       padding: 20px;
       z-index:9
     }

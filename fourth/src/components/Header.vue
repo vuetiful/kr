@@ -23,9 +23,9 @@ export default {
     activeIndex () {
       if (this.scrollY > this.windowHeight) {
         switch (true) {
-          case this.scrollY > 1600 && this.scrollY <= 3900:
+          case this.scrollY > 1600 && this.scrollY <= 3700:
             return '2'
-          case this.scrollY > 3900:
+          case this.scrollY > 3700:
             return '3'
           default:
             return '1'
