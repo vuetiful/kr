@@ -86,19 +86,13 @@ export default {
   pointer-events: none;
 }
 .center {
-  margin-top: 25%;
+  margin: auto;
   font-size: 1em;
   color: white;
   line-height: 30px;
   background-size: contain;
   background-blend-mode: overlay;
   z-index: 10;
-}
-.center.laptop {
-  margin-top: 10%;
-}
-.center.desktop {
-  margin-top: 18%;
 }
 .logo {
   width: 14em;
