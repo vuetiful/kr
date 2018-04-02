@@ -31,7 +31,7 @@ export default {
     z-index: 1000;
   }
   .el-button {
-    border-right: 50%;
+    border-radius: 50%;
     padding: 12px;
   }
 </style>
