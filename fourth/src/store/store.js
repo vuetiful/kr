@@ -165,11 +165,11 @@ export const volunteers = [
     description: '설명을 입력해주세요.'
   },
   {
-    pageUrl: 'http://github.com/vuetiful',
+    pageUrl: 'https://github.com/kciter',
     imgUrl: '/static/img/volunteers/profile/kciter.png',
     backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
     name: '이선협',
-    description: '설명을 입력해주세요.'
+    description: '화이팅!'
   }
 ]
 
