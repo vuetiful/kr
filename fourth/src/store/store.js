@@ -116,7 +116,7 @@ export const volunteers = [
     description: '조금 큰 사진요정'
   },
   {
-    pageUrl: 'http://github.com/vuetiful',
+    pageUrl: 'https://www.hax0r.info',
     imgUrl: '/static/img/volunteers/profile/hax0r.jpg',
     backgroundImageUrl: '/static/img/volunteers/background-image/hax0r.jpg',
     name: '우영준',
