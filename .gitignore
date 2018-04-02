@@ -6,3 +6,4 @@ static/
 fourth/src/store/store.js
 static/js/manifest.2ae2e69a05c33dfc65f8.js.map
 static/js/manifest.2ae2e69a05c33dfc65f8.js.map
+*.map
