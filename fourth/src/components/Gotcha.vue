@@ -35,7 +35,7 @@ export default {
     register () {
       this.$message({
         showClose: true,
-        message: '아직 참가 신청 전 입니다.',
+        message: '4월 3일(화) 오전 11시 오픈 예정입니다.',
         type: 'warning'
       })
     }
