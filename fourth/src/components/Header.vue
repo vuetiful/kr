@@ -25,10 +25,8 @@ export default {
         switch (true) {
           case this.scrollY > 1600 && this.scrollY <= 2800:
             return '2'
-          case this.scrollY > 2800 && this.scrollY <= 3200:
+          case this.scrollY > 4950:
             return '3'
-          case this.scrollY > 3200:
-            return '4'
           default:
             return '1'
         }
