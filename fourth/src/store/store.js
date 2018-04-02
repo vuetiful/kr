@@ -40,8 +40,8 @@ export const presentations = [
       imgUrl: '/static/img/presenters/june.png',
       name: '최준석',
       affiliation: 'NHN Bugs',
-      keywords: 'graphql, api, apollo, vue-supply, vue',
-      description: '본 세션은 GraphQL에 대한 약간의 사전 지식이 필요로 하며, Server feature에 대한 설명이 포함될 수 있습니다.'
+      keywords: 'graphql, api, apollo, vue',
+      description: '[3회 발표자료](https://github.com/seouldrinker/seoulDrinkerGraphql)를 ~~재탕(?)~~ 확장시켜서 최대한 쉽게 발표할 예정이에요 :) 잘부탁드립니다.<br/>**본 세션은 GraphQL에 대한 약간의 사전 지식이 필요로 하며, Server feature에 대한 설명이 포함될 수 있습니다.**'
     }
   }
 ]
