@@ -40,8 +40,8 @@ export const presentations = [
       imgUrl: '/static/img/presenters/june.png',
       name: '최준석',
       affiliation: 'NHN Bugs',
-      keywords: 'graphql, api, apollo, vue-supply, vue',
-      description: '본 세션은 GraphQL에 대한 약간의 사전 지식이 필요로 하며, Server feature에 대한 설명이 포함될 수 있습니다.'
+      keywords: 'graphql, api, apollo, vue',
+      description: '[3회 발표자료](https://github.com/seouldrinker/seoulDrinkerGraphql)를 ~~재탕(?)~~ 확장시켜서 최대한 쉽게 발표할 예정이에요 :) 잘부탁드립니다.<br/>**본 세션은 GraphQL에 대한 약간의 사전 지식이 필요로 하며, Server feature에 대한 설명이 포함될 수 있습니다.**'
     }
   }
 ]
@@ -116,7 +116,7 @@ export const volunteers = [
     description: '조금 큰 사진요정'
   },
   {
-    pageUrl: 'http://github.com/vuetiful',
+    pageUrl: 'https://www.hax0r.info',
     imgUrl: '/static/img/volunteers/profile/hax0r.jpg',
     backgroundImageUrl: '/static/img/volunteers/background-image/hax0r.jpg',
     name: '우영준',
@@ -130,11 +130,11 @@ export const volunteers = [
     description: 'kkd927'
   },
   {
-    pageUrl: 'https://media.licdn.com/dms/image/C4E03AQGlhtKrF4Kw5g/profile-displayphoto-shrink_200_200/0?e=1527562800&v=alpha&t=CtK3XGzxnJDenplQQE-RYgR2XRAjT7TO60kIEEiGx5I',
+    pageUrl: 'https://wickso.me/',
     imgUrl: '/static/img/volunteers/profile/wicksome.png',
     backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
     name: '김영준',
-    description: '설명을 입력해주세요.'
+    description: 'SGkgZ3V5cyEgSSdtIHdpY2tzb21lIHNvZnR3YXJlIGVuZ2luZWVyISA6RA=='
   },
   {
     pageUrl: 'http://github.com/vuetiful',

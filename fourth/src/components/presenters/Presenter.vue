@@ -1,21 +1,27 @@
 <template lang="html">
   <el-card :body-style="{ padding: '0px' }">
-      <img :src="presenter.imgUrl" class="image">
-      <div class="card">
-        <span class="name">{{ presenter.name }}</span>
-        <div class="bottom clearfix">
-          <time class="time">{{ presenter.affiliation }}</time>
-          <div class="description">{{ presenter.description }}</div>
-        </div>
+    <img :src="presenter.imgUrl" class="image">
+    <div class="card">
+      <span class="name">{{ presenter.name }}</span>
+      <div class="bottom clearfix">
+        <time class="time">{{ presenter.affiliation }}</time>
+        <div class="description" v-html="getMarkedDescription()"></div>
       </div>
-    </el-card>
+    </div>
+  </el-card>
 </template>
 
 <script>
+import marked from 'marked'
 export default {
   props: {
     presenter: {
       type: Object
+    }
+  },
+  methods: {
+    getMarkedDescription () {
+      return marked(this.presenter.description)
     }
   }
 }

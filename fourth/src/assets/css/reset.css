@@ -69,3 +69,6 @@ address, caption, em {
 hr {
   display: none;
 }
+strong {
+	font-weight: bold;
+}
