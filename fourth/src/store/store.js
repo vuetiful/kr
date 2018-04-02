@@ -123,11 +123,11 @@ export const volunteers = [
     description: 'a.k.a hax0r'
   },
   {
-    pageUrl: 'http://github.com/vuetiful',
+    pageUrl: 'https://www.facebook.com/kkd927',
     imgUrl: '/static/img/volunteers/profile/kkd927.png',
-    backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
+    backgroundImageUrl: '/static/img/volunteers/background-image/kkd927b2.png',
     name: '권경덕',
-    description: '설명을 입력해주세요.'
+    description: 'kkd927'
   },
   {
     pageUrl: 'https://media.licdn.com/dms/image/C4E03AQGlhtKrF4Kw5g/profile-displayphoto-shrink_200_200/0?e=1527562800&v=alpha&t=CtK3XGzxnJDenplQQE-RYgR2XRAjT7TO60kIEEiGx5I',
