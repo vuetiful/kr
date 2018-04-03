@@ -1,4 +1,4 @@
-export const registrationUrl = ''
+export const registrationUrl = 'https://tumblbug.com/vuetiful'
 
 export const colors = {
   green: '#42b883',
