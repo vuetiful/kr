@@ -1,3 +1,5 @@
+export const registrationUrl = ''
+
 export const colors = {
   green: '#42b883',
   navy: '#35495e'
