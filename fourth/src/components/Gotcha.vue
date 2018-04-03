@@ -19,10 +19,11 @@
 </template>
 
 <script>
-import { generalInfo } from '@/store/store'
+import { registrationUrl, generalInfo } from '@/store/store'
 export default {
   data () {
     return {
+      registrationUrl,
       generalInfo
     }
   },
@@ -33,11 +34,15 @@ export default {
   },
   methods: {
     register () {
-      this.$message({
-        showClose: true,
-        message: '4월 3일(화) 오전 11시 오픈 예정입니다.',
-        type: 'warning'
-      })
+      if (registrationUrl == null || registrationUrl.length < 5) {
+        this.$message({
+          showClose: true,
+          message: '4월 3일(화) 오전 11시 오픈 예정입니다.',
+          type: 'warning'
+        })
+      } else {
+        window.open(registrationUrl, '_blank')
+      }
     }
   }
 }
