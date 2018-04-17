@@ -335,7 +335,8 @@ export default {
       text-align: center;
       color: #fff;
       padding: 20px;
-      z-index:9
+      z-index:9;
+      line-height: 1.5;
     }
   }
 </style>
