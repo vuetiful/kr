@@ -323,7 +323,7 @@ export const regularParticipants = [
   '김해연',
   'dlwo1****',
   '이혜진',
-  '박주혁'
+  '박주혁',
 ]
 
 export const prevMeetups = [
