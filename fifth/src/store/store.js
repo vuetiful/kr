@@ -156,7 +156,7 @@ export const prevMeetups = [
   },
   {
     name: 'Vuetiful Korea 4회',
-    pageUrl: 'http://kr.vuetiful/fourth/'
+    pageUrl: 'http://kr.vuetiful/4/'
   }
 ]
 
