@@ -106,7 +106,7 @@ export const volunteers = [
   {
     pageUrl: 'http://github.com/imsukmin',
     imgUrl: '/static/img/volunteers/profile/ngenius.png',
-    backgroundImageUrl: '/static/img/volunteers/background-image/ngenius.png',
+    backgroundImageUrl: '/static/img/volunteers/background-image/ngenius.jpg',
     name: '임석민',
     description: '@nGenius'
   },
