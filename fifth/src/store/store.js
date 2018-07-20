@@ -122,21 +122,21 @@ export const volunteers = [
     imgUrl: '/static/img/volunteers/profile/no-profile.jpg',
     backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
     name: '마광휘',
-    description: ''
+    description: '설명을 입력해주세요.'
   },
   {
     pageUrl: '',
     imgUrl: '/static/img/volunteers/profile/no-profile.jpg',
     backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
     name: '성현우',
-    description: ''
+    description: '설명을 입력해주세요.'
   },
   {
-    pageUrl: '',
-    imgUrl: '/static/img/volunteers/profile/no-profile.jpg',
-    backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
+    pageUrl: 'https://twitter.com/re_you_cat',
+    imgUrl: 'reyoucat.jpg',
+    backgroundImageUrl: 'https://pbs.twimg.com/profile_banners/781803661/1520209479/1500x500',
     name: '최재현',
-    description: ''
+    description: '@re_you_cat'
   }
 ]
 
