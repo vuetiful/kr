@@ -94,7 +94,7 @@ export const volunteers = [
     imgUrl: '/static/img/volunteers/profile/wicksome.png',
     backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
     name: '김영준',
-    description: 'SGkgZ3V5cyEgSSdtIHdpY2tzb21lIHNvZnR3YXJlIGVuZ2luZWVyISA6RA=='
+    description: '설명을 입력해주세요.'
   },
   {
     pageUrl: 'http://github.com/vuetiful',
