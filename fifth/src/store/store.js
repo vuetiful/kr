@@ -130,6 +130,13 @@ export const volunteers = [
     backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
     name: '성현우',
     description: ''
+  },
+  {
+    pageUrl: '',
+    imgUrl: '/static/img/volunteers/profile/no-profile.jpg',
+    backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
+    name: '최재현',
+    description: ''
   }
 ]
 
