@@ -111,11 +111,11 @@ export const volunteers = [
     description: '@nGenius'
   },
   {
-    pageUrl: '',
+    pageUrl: 'https://jicjjang.github.io/blog',
     imgUrl: '/static/img/volunteers/profile/june.png',
-    backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
+    backgroundImageUrl: '/static/img/volunteers/background-image/june.png',
     name: '최준석',
-    description: ''
+    description: '카카오페이에서 프론트/백엔드 개발자 채용합니다 :D'
   },
   {
     pageUrl: '',
