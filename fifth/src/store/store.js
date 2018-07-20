@@ -133,7 +133,7 @@ export const volunteers = [
   },
   {
     pageUrl: 'https://twitter.com/re_you_cat',
-    imgUrl: 'reyoucat.jpg',
+    imgUrl: '/static/img/volunteers/profile/reyoucat.jpg',
     backgroundImageUrl: 'https://pbs.twimg.com/profile_banners/781803661/1520209479/1500x500',
     name: '최재현',
     description: '@re_you_cat'
