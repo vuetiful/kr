@@ -118,11 +118,11 @@ export const volunteers = [
     description: '카카오페이에서 프론트/백엔드 개발자 채용합니다 :D'
   },
   {
-    pageUrl: '',
-    imgUrl: '/static/img/volunteers/profile/no-profile.jpg',
-    backgroundImageUrl: '/static/img/volunteers/background-image/vue.jpeg',
+    pageUrl: 'https://github.com/Vallista',
+    imgUrl: '/static/img/volunteers/profile/gwm.jpg',
+    backgroundImageUrl: '/static/img/volunteers/background-image/gwm.jpeg',
     name: '마광휘',
-    description: '설명을 입력해주세요.'
+    description: '디자이너님 찾습니다 ㅠ.ㅠ'
   },
   {
     pageUrl: '',
