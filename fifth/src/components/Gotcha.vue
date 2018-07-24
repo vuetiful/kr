@@ -11,6 +11,7 @@
         <p class="location">{{ generalInfo.location }}</p>
       </div>
       <el-button type="primary" :class="{ laptop, desktop }" @click="register" target="_blank" class="register-btn">참가 신청</el-button>
+      <mobile-pass />
     </div>
     <svg class="arrows">
       <path class="a" d="M0 0 L15 16 L30 0"></path>
@@ -20,7 +21,12 @@
 
 <script>
 import { registrationUrl, generalInfo } from '@/store/store'
+import MobilePass from './MobilePass.vue'
+
 export default {
+  components: {
+    MobilePass
+  },
   data () {
     return {
       registrationUrl,
