@@ -1,10 +1,10 @@
 <template>
-  <el-card class="box-card" v-if="state != loginStates.INTERMIDIATE">
-    <el-form v-if="state === loginStates.BEFORE_LOGIN" @submit.prevent="login">
+  <el-card class="mobile-pass" v-if="state != loginStates.INTERMIDIATE">
+    <el-form v-if="state === loginStates.BEFORE_LOGIN" @submit.prevent.native="login">
       <el-form-item label="참가 신청하신 이메일 주소로 로그인 하세요">
         <el-input v-model="email" @keyup.enter.prevent="login" />
-        <el-button type="primary" @click="login">이메일로 로그인</el-button>
       </el-form-item>
+      <el-button type="primary" @click="login">이메일로 로그인</el-button>
     </el-form>
     <div v-if="state === loginStates.MAIL_SENT">
       {{this.email}} 로 로그인 링크가 발송되었습니다. 메일함으로 이동하셔서 다음 절차를 진행해주세요.
@@ -83,8 +83,10 @@ export default {
             }
           })
           this.state = loginStates.LOGGED_IN
+        }, error => {
+          // noop
+          console.log(error)
         })
-        
       } else {
         off && off()
         if (qs.action === 'auth-callback') {
@@ -98,8 +100,6 @@ export default {
     if (qs.action === 'auth-callback' && auth.isSignInWithEmailLink(loc)) {
       this.email = qs.email
       auth.signInWithEmailLink(this.email, loc).then(result => {
-        // TODO: perform get user info
-        // this.state = loginStates.LOGGED_IN
         window.location.href = '/'
       }).catch(e => {
         alert(e)
