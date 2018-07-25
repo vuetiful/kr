@@ -1,4 +1,4 @@
-export const registrationUrl = ''
+export const registrationUrl = 'https://meetgo.kr/#/userEventDetail/vuetiful05'
 
 export const colors = {
   green: '#42b883',
