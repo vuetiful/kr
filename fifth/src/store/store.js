@@ -1,4 +1,4 @@
-export const registrationUrl = ''
+export const registrationUrl = 'https://meetgo.kr/#/userEventDetail/vuetiful05'
 
 export const colors = {
   green: '#42b883',
@@ -17,7 +17,7 @@ export const presentations = [
     time: '19:35',
     title: 'NUXT로 Art하게 프론트 설계해보기',
     presenter: {
-      imgUrl: '/static/img/presenters/no-profile.jpg',
+      imgUrl: '/static/img/presenters/namedboy.jpg',
       name: '김선종',
       affiliation: '아티프렌즈',
       keywords: 'Vue, nuxt, 초보, 설계, 프론트엔드',
