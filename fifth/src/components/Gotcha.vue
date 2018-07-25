@@ -10,7 +10,6 @@
         <p class="date">{{ generalInfo.date }}<br v-if="mobile || smartphone"><span class="time"> {{ generalInfo.time}}</span></p>
         <p class="location">{{ generalInfo.location }}</p>
       </div>
-      <el-button type="primary" :class="{ laptop, desktop }" @click="register" target="_blank" class="register-btn">참가 신청</el-button>
       <mobile-pass />
     </div>
     <svg class="arrows">
