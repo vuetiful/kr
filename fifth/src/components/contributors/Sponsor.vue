@@ -1,6 +1,6 @@
 <template lang="html">
   <el-container direction="vertical">
-    <a :href="sponsor.pageUrl">
+    <a class="sponsor-img" :href="sponsor.pageUrl">
       <img :src="sponsor.imgUrl" :alt="'후원사' + sponsor.name">
     </a>
     <h3 class="name">
@@ -18,3 +18,4 @@ export default {
   }
 }
 </script>
+

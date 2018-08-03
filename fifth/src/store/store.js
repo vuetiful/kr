@@ -39,11 +39,11 @@ export const presentations = [
     time: '20:25',
     title: '더퀴즈라이브 웹 버전 개발기',
     presenter: {
-      imgUrl: '/static/img/presenters/no-profile.jpg',
+      imgUrl: '/static/img/presenters/sknam.jpg',
       name: '남상균',
       affiliation: 'NBT',
       keywords: '더퀴즈라이브, Vue.js, RxJS, Firebase.js, socket.io',
-      description: 'NBT에서 Chief Architect로 일하며 “캐시슬라이드”와 “더퀴즈라이브”의 개발에 참여하고 있습니다. 모바일 초기부터 다양한 플랫폼 개발을 경험해 왔으며, 현재는 백엔드에서 모바일 서비스를 보다 효율적으로 지원하는 방법들을 고민하고 있습니다. 코딩도 좋아하지만 사람들과 협업을 통해 근본적인 문제를 해결하고, 가치있는 서비스를 만드는 것을 더 큰 즐거움으로 여기며, 애자일과 조직문화에도 많은 관심을 가지고 있습니다.'
+      description: '만능일꾼이 되고 싶은 일개미'
     }
   }
 ]
@@ -67,11 +67,11 @@ export const program = [
 ]
 
 export const sponsors = [
-  // {
-  //   pageUrl: 'http://www.logi-spot.com',
-  //   imgUrl: '/static/img/sponsors/logispot.png',
-  //   name: 'Logispot'
-  // }
+  {
+    pageUrl: 'https://youtube.com/ahastudio',
+    imgUrl: '/static/img/sponsors/ashal.jpg',
+    name: '아샬'
+  }
 ]
 
 export const volunteers = [

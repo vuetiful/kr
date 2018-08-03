@@ -1,13 +1,13 @@
 <template lang="html">
   <el-container id="contributors" class="container" direction="vertical" v-bind:class="{ 'is-focused' : focused}">
     <div id="dim-of-contributors"></div>
-    <!-- <el-container class="container-sponsor">
+    <el-container class="container-sponsor">
       <el-row class="sponsors" :gutter="20" type="flex" justify="center">
         <el-col :xs="10" :sm="12" :lg="12" v-for="sponsor in sponsors" :key="sponsor.name">
           <sponsor :sponsor="sponsor"></sponsor>
         </el-col>
       </el-row>
-    </el-container> -->
+    </el-container>
     <div class="container-volunteers" v-show="!mobile && !smartphone">
       <volunteer v-for="volunteer in volunteers" :volunteer="volunteer" :key="volunteer.name" :data-id="volunteer.name" @focusOnVolunteer="focusOnVolunteer" @unFocusOnVolunteer="unFocusOnVolunteer"></volunteer>
     </div>
@@ -84,8 +84,8 @@ export default {
     getAbleScopeOfActivity (maximumScopeOfActivityX, maximumScopeOfActivityY, el) {
       // const sponsorFirstRect = document.querySelectorAll('.container-sponsor > * img')[0].getBoundingClientRect()
       // const sponsorLastRect = document.querySelectorAll('.container-sponsor > * img')[1].getBoundingClientRect()
-      // const sponsorExtraSpace = 120
-      const sponsorExtraSpace = 0
+      const sponsorExtraSpace = 120
+      // const sponsorExtraSpace = 0
       const volunteerExtraSpace = 100
 
       var x = (maximumScopeOfActivityX / Object.keys(this.volunteers).length) * Object.keys(this.assignedPositions).length
