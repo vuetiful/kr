@@ -184,3 +184,12 @@ export const sns = [
     faClass: 'fab fa-github'
   }
 ]
+
+export const MEETUP_ID = 'vj6035gsOcSj5SiS5MrR'
+export const /* enum */ loginStates = {
+  INTERMIDIATE: 0,
+  BEFORE_LOGIN: 1,
+  MAIL_SENT: 2,
+  IN_PROGRESS: 3,
+  LOGGED_IN: 4
+}
