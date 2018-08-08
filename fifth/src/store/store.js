@@ -263,7 +263,7 @@ export const sns = [
   }
 ]
 
-export const MEETUP_ID = 'vj6035gsOcSj5SiS5MrR'
+export const MEETUP_ID = 'IlluatGALcrPjt07nOLY'
 export const /* enum */ loginStates = {
   INTERMIDIATE: 0,
   BEFORE_LOGIN: 1,
