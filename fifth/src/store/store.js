@@ -18,6 +18,7 @@ export const presentations = [
     title: 'NUXT로 Art하게 프론트 설계해보기',
     presenter: {
       imgUrl: '/static/img/presenters/namedboy.jpg',
+      fileUrl: '/static/pdf/01.pdf',
       name: '김선종',
       affiliation: '아티프렌즈',
       keywords: 'Vue, nuxt, 초보, 설계, 프론트엔드',
@@ -29,6 +30,7 @@ export const presentations = [
     title: '스프링 부트에서 뷰 맛보기',
     presenter: {
       imgUrl: '/static/img/presenters/sam.png',
+      fileUrl: '/static/pdf/02.pdf',
       name: '박새미',
       affiliation: 'Notiplus',
       keywords: 'springboot, thymeleaf',
@@ -40,6 +42,7 @@ export const presentations = [
     title: '더퀴즈라이브 웹 버전 개발기',
     presenter: {
       imgUrl: '/static/img/presenters/sknam.jpg',
+      fileUrl: '/static/pdf/03.pdf',
       name: '남상균',
       affiliation: 'NBT',
       keywords: '더퀴즈라이브, Vue.js, RxJS, Firebase.js, socket.io',
@@ -142,7 +145,7 @@ export const volunteers = [
 
 export const participantSponsors = [
   '이선협',
-  '이재호',
+  '이재호'
 ]
 
 export const regularParticipants = [

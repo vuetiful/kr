@@ -15,6 +15,14 @@
           <div class="details">
             <div>
               <h3 :class="{ 'regular-event': session.presenter == null }">{{ session.title }}</h3>
+              <a v-if="session.presenter" :href="session.presenter.fileUrl">
+                <el-button
+                  v-if="session.presenter"
+                  type="primary"
+                  size="mini"
+                  icon="el-icon-download"
+                  circle></el-button>
+              </a>
               <p v-if="session.presenter != null">{{ session.presenter.keywords}}</p>
               <p v-else></p>
             </div>
@@ -131,6 +139,7 @@ export default {
       margin: 1em 0;
 
       h3 {
+        display: inline-block;
         color: white;
         font-size: 1.4em;
         margin: 0;
@@ -141,6 +150,10 @@ export default {
       h3.regular-event {
         margin-top: 10px;
         padding: 0;
+      }
+
+      button {
+        margin-top: -5px;
       }
 
       p {
